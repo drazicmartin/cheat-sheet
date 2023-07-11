@@ -14,6 +14,11 @@ Inspect Docker : `json format`
 docker inspect <DOCKER_NAME | DOCKER_ID>
 ```
 
+Logs Docker : `json format`
+```bash
+docker logs <DOCKER_NAME | DOCKER_ID>
+```
+
 ### Docker Run
 
 Show running Docker
