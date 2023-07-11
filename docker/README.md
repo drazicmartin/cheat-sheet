@@ -9,7 +9,7 @@ Run command inside a container
 docker exec <DOCKER_NAME | DOCKER_ID>
 ```
 
-### Container Management
+### Docker Run
 
 Show running Docker
 ```bash
@@ -33,6 +33,11 @@ docker run -d <IMAGE_NAME>
 docker attach <DOCKER_NAME | DOCKER_ID>
 ```
 
+Port Mapping
+```bash
+docker run -p <DOCKER_ENTRY_PORT>:<PORT>
+```
+
 Running in Interactive Terminal mode
 ```bash
 docker run -it <IMAGE_NAME>
@@ -43,7 +48,7 @@ Kill a container
 docker stop <DOCKER_NAME | DOCKER_ID>
 ```
 
-Remove a container from `docker ps`
+Remove a container from the local host
 ```bash
 docker rm <DOCKER_NAME | DOCKER_ID>
 ```
