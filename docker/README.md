@@ -33,7 +33,7 @@ docker run -d <IMAGE_NAME>
 docker attach <DOCKER_NAME | DOCKER_ID>
 ```
 
-Running in interactive mode
+Running in Interactive Terminal mode
 ```bash
 docker run -it <IMAGE_NAME>
 ```
