@@ -38,6 +38,13 @@ Port Mapping
 docker run -p <MAPPED_PORT>:<DOCKER_ENTRY_PORT> <IMAGE_NAME>
 ```
 
+Memory Volume mapping
+```bash
+docker run -v <MAPPED_FOLDER>:<DOCKER_FOLDER> <IMAGE_NAME>
+exmaple :
+docker run -v /opt/datadir:/var/lib/mysql mysql
+```
+
 Running in Interactive Terminal mode
 ```bash
 docker run -it <IMAGE_NAME>
