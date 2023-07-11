@@ -35,7 +35,7 @@ docker attach <DOCKER_NAME | DOCKER_ID>
 
 Port Mapping
 ```bash
-docker run -p <DOCKER_ENTRY_PORT>:<PORT>
+docker run -p <DOCKER_ENTRY_PORT>:<PORT> <IMAGE_NAME>
 ```
 
 Running in Interactive Terminal mode
