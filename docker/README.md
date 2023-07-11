@@ -9,6 +9,11 @@ Run command inside a container
 docker exec <DOCKER_NAME | DOCKER_ID>
 ```
 
+Inspect Docker : `json format`
+```bash
+docker inspect <DOCKER_NAME | DOCKER_ID>
+```
+
 ### Docker Run
 
 Show running Docker
