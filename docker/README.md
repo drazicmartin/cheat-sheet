@@ -45,7 +45,7 @@ docker attach <DOCKER_NAME | DOCKER_ID>
 
 Port Mapping
 ```bash
-docker run -p <MAPPED_PORT>:<DOCKER_ENTRY_PORT> <IMAGE_NAME>
+docker run -p <DOCKER_HOST_PORT>:<DOCKER_CONTAINER_PORT> <IMAGE_NAME>
 ```
 
 Memory Volume mapping
