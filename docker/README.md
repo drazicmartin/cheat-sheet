@@ -19,6 +19,11 @@ Logs Docker : `json format`
 docker logs <DOCKER_NAME | DOCKER_ID>
 ```
 
+Easy Ubuntu bash
+```bash
+docker run -it ubuntu bash
+```
+
 ### Docker Run
 
 Show running Docker
@@ -87,3 +92,23 @@ Remove a docker image for local host
 docker rmi <IMAGE_NAME>
 ```
 
+## Dockerfile
+
+## Docker file format
+```bash
+[INSTRUCTION] [ARGGUMENT]
+
+# example
+FROM ubuntu                                    # must include an os
+RUN apt update && apt -y install python        # download python
+RUN pip install django                         # install dependency
+COPY . /opt/source-code                        # copy project files from host to image
+ENTRYPOINT 
+```
+
+### Build an image
+```bash
+docker build <PATH_TO_DOCKERFILE> -f Dockerfile -t <TAG_NAME>
+# example
+docker build . -f Dockerfile -t drazic/my-app
+```
