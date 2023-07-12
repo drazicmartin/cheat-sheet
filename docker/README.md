@@ -106,9 +106,15 @@ COPY . /opt/source-code                        # copy project files from host to
 ENTRYPOINT 
 ```
 
-### Build an image
+Dockerfile
 ```bash
+# Build an image
 docker build <PATH_TO_DOCKERFILE> -f Dockerfile -t <TAG_NAME>
 # example
 docker build . -f Dockerfile -t drazic/my-app
+
+# Push an image
+docker push <DOCKER_NAME>
+# example
+docker push drazic/my-app
 ```
