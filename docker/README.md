@@ -26,6 +26,8 @@ docker run -it ubuntu bash
 
 ### Docker Run
 
+`Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+
 Show running Docker
 ```bash
 docker ps
