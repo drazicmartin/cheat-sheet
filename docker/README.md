@@ -48,7 +48,7 @@ docker run -d <IMAGE_NAME>
 docker attach <DOCKER_NAME | DOCKER_ID>
 ```
 
-Set the name of the docker
+Set the name of the container
 ```bash
 docker run --name <NAME> <IMAGE_NAME>
 ```
