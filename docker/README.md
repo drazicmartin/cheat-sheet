@@ -48,6 +48,11 @@ docker run -d <IMAGE_NAME>
 docker attach <DOCKER_NAME | DOCKER_ID>
 ```
 
+Set the name of the docker
+```bash
+docker run --name <NAME> <IMAGE_NAME>
+```
+
 Port Mapping
 ```bash
 docker run -p <DOCKER_HOST_PORT>:<DOCKER_CONTAINER_PORT> <IMAGE_NAME>
@@ -63,6 +68,11 @@ docker run -v /opt/datadir:/var/lib/mysql mysql
 Running in Interactive Terminal mode
 ```bash
 docker run -it <IMAGE_NAME>
+```
+
+Set envirnonment variables
+```bash
+docker run -e <VAR_NAME>=<VALUE>
 ```
 
 Kill a container
