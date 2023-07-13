@@ -18,7 +18,6 @@
 
 ```tree
 root
-|
 ├── /var/lib/docker
 │   ├── aufs
 │   ├── containers
