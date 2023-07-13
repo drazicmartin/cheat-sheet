@@ -2,7 +2,7 @@
 Repository serve as a reminder for some commands and tools
 
 ## Quick links
- - [Python](Python/snippet.md)
+ - [Python](python/snippet.md)
  - [Docker](docker/README.md)
 
 ## File structure
