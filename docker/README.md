@@ -232,6 +232,8 @@ docker rmi <IMAGE_NAME>
 
 **desc** : *Dockerfile are use to create images of an application*
 
+ - each line create a layer in the image
+
 ### Dockerfile format
 ```bash
 [INSTRUCTION] [ARGGUMENT]
