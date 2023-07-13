@@ -4,6 +4,7 @@ Repository serve as a reminder for some commands and tools
 ## Quick links
  - [Python](python/snippet.md)
  - [Docker](docker/README.md)
+ - [Blender](blender/README.md)
 
 ## File structure
 `README.md` is the entry point of the subject
