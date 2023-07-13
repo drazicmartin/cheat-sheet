@@ -1,10 +1,14 @@
 # Main Docker cheat sheet
 
+---
+
 - [Access a container](#ac)
 - [Docker Compose](#dc)
 - [Docker Run](#dr)
 - [Docker Image](#di)
   - [Dockerfile](#df)
+
+---
 
 <a name="ac"/>
 
@@ -29,6 +33,8 @@ Easy Ubuntu bash
 ```bash
 docker run -it ubuntu bash
 ```
+
+---
 
 <a name="dc"/>
 
@@ -136,6 +142,8 @@ networks:
   back-tier:
 ```
 
+---
+
 <a name="dr"/>
 
 ## Docker Run
@@ -205,6 +213,8 @@ Remove a container from the local host
 ```bash
 docker rm <DOCKER_NAME | DOCKER_ID>
 ```
+
+---
 
 <a name="di"/>
 
