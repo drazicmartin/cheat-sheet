@@ -317,6 +317,9 @@ docker image tag <IMAGE_NAME> <URL>:<PORT>/<IMAGE_NAME>
 
 Push to the repository
 docker push <URL>:<PORT>/<IMAGE_NAME>
+
+Pull from the repository
+docker pull <URL>:<PORT>/<IMAGE_NAME>
 ```
 
 See all available images
