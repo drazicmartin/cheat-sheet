@@ -206,6 +206,11 @@ docker run -v <MAPPED_FOLDER>:<DOCKER_FOLDER> <IMAGE_NAME>
 exmaple :
 docker run -v /opt/datadir:/var/lib/mysql mysql
 
+# or with mount
+docker run \
+  --mount type=bind,source:/opt/datadir,target:/var/lib/mysql \
+  mysql
+
 # or using volume name
 ## first create a volume
 docker volume create <VOLUME_NAME>
