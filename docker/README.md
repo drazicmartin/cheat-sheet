@@ -304,3 +304,24 @@ docker push <DOCKER_NAME>
 # example
 docker push drazic/my-app
 ```
+
+## Repository Private/Public
+
+Workflow
+```bash
+Create a private repository
+ocker run -d --name my-registry -p 5000:5000 --restart alwais registry:2
+
+Tag image to the registry
+docker image tag <IMAGE_NAME> <URL>:<PORT>/<IMAGE_NAME>
+
+Push to the repository
+docker push <URL>:<PORT>/<IMAGE_NAME>
+```
+
+See all available images
+```bash
+curl -X GET <URL>:<PORT>/v2/_catalog
+# example
+curl -X GET localhost:5000/v2/_catalog
+```
