@@ -1,7 +1,7 @@
 # Main Docker cheat sheet
 
 ---
-
+- [Global](#global)
 - [Access a container](#ac)
 - [Docker Compose](#dc)
 - [Docker Run](#dr)
@@ -9,6 +9,23 @@
   - [Dockerfile](#df)
 
 ---
+
+<a name="global"/>
+
+## Global
+
+### File structure 
+
+```tree
+root
+|
+├── /var/lib/docker
+│   ├── aufs
+│   ├── containers
+│   ├── image
+│   ├── volume
+```
+
 
 <a name="ac"/>
 
