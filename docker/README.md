@@ -4,7 +4,7 @@
 - [Docker Compose](#dc)
 - [Docker Run](#dr)
 - [Docker Image](#di)
-- [Dockerfile](#df)
+  - [Dockerfile](#df)
 
 <a name="ac"/>
 
@@ -31,6 +31,7 @@ docker run -it ubuntu bash
 ```
 
 <a name="dc"/>
+
 ## Docker compose
 
 docker compose use yaml format \
@@ -228,14 +229,14 @@ docker rmi <IMAGE_NAME>
 
 <a name="df"/>
 
-## Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
+### Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
 
 **desc** : *Dockerfile are use to create images of an application*
 
  - Docker image use a layered achitecture
  - Each line of the Dockerfile create a layer in the image
 
-### Dockerfile format
+Dockerfile format
 ```bash
 [INSTRUCTION] [ARGGUMENT]
 
@@ -249,7 +250,7 @@ ENTRYPOINT
 
 Usage : `docker build [OPTIONS] PATH | URL | -`
 
-### Build Images
+Build Images
 ```bash
 # Build an image
 docker build -f Dockerfile -t <TAG_NAME> <PATH_TO_DOCKERFILE>
