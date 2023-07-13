@@ -40,10 +40,12 @@ docker run -it ubuntu bash
 
 ## Docker compose
 
-docker compose use yaml format \
-versions : 
- - v1 : don't use services
- - v2 & v3 : use services and are now merged
+**desc** : *Docker compose is use to manage multiple containers*
+
+ - docker compose use yaml format \
+ - versions : 
+   - v1 : don't use services
+   - v2 & v3 : use services and are now merged
 
 Docker compose up
 ```bash
