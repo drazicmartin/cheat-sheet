@@ -1,8 +1,14 @@
 # Main Docker cheat sheet
 
-## Basics
+- [Access a container](#ac)
+- [Docker Compose](#dc)
+- [Docker Run](#dr)
+- [Docker Image](#di)
+- [Dockerfile](#df)
 
-### Access a container
+<a name="ac"/>
+
+## Access a container
 
 Run command inside a container
 ```bash
@@ -24,7 +30,114 @@ Easy Ubuntu bash
 docker run -it ubuntu bash
 ```
 
-### Docker Run
+<a name="dc"/>
+## Docker compose
+
+docker compose use yaml format \
+versions : 
+ - v1 : don't use services
+ - v2 & v3 : use services and are now merged
+
+Docker compose up
+```bash
+docker compose up .
+```
+
+Docker build
+```bash
+docker compose build .
+```
+
+example from [docker-sample](https://github.com/dockersamples/example-voting-app)
+```yml
+# version is now using "compose spec"
+# v2 and v3 are now combined!
+# docker-compose v1.27+ required
+
+services:
+  vote:
+    build: ./vote
+    # use python rather than gunicorn for local dev
+    command: python app.py
+    depends_on:
+      redis:
+        condition: service_healthy
+    healthcheck: 
+      test: ["CMD", "curl", "-f", "http://localhost"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    volumes:
+     - ./vote:/app
+    ports:
+      - "5000:80"
+    networks:
+      - front-tier
+      - back-tier
+
+  result:
+    build: ./result
+    # use nodemon rather than node for local dev
+    entrypoint: nodemon server.js
+    depends_on:
+      db:
+        condition: service_healthy 
+    volumes:
+      - ./result:/app
+    ports:
+      - "5001:80"
+      - "5858:5858"
+    networks:
+      - front-tier
+      - back-tier
+
+  worker:
+    build:
+      context: ./worker
+    depends_on:
+      redis:
+        condition: service_healthy 
+      db:
+        condition: service_healthy 
+    networks:
+      - back-tier
+
+  redis:
+    image: redis:alpine
+    volumes:
+      - "./healthchecks:/healthchecks"
+    healthcheck:
+      test: /healthchecks/redis.sh
+      interval: "5s"
+    networks:
+      - back-tier
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "postgres"
+    volumes:
+      - "db-data:/var/lib/postgresql/data"
+      - "./healthchecks:/healthchecks"
+    healthcheck:
+      test: /healthchecks/postgres.sh
+      interval: "5s"
+    networks:
+      - back-tier
+
+volumes:
+  db-data:
+
+networks:
+  front-tier:
+  back-tier:
+```
+
+<a name="dr"/>
+
+## Docker Run
 
 `Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
@@ -67,6 +180,11 @@ exmaple :
 docker run -v /opt/datadir:/var/lib/mysql mysql
 ```
 
+[DEPRECATED] Running docker with network links
+```bash
+docker run --name <DOCKER_NAME> --links <OTHER_DOCKER_NAME>:<OTHER_DOCKER_NAME> <IMAGE_NAME>
+```
+
 Running in Interactive Terminal mode
 ```bash
 docker run -it <IMAGE_NAME>
@@ -87,7 +205,11 @@ Remove a container from the local host
 docker rm <DOCKER_NAME | DOCKER_ID>
 ```
 
-### Image
+<a name="di"/>
+
+## Image
+
+**desc** : *Images are use to create a specific container*
 
 Pull a docker image
 ```bash
@@ -104,9 +226,13 @@ Remove a docker image for local host
 docker rmi <IMAGE_NAME>
 ```
 
-## Dockerfile
+<a name="df"/>
 
-## Docker file format
+## Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
+
+**desc** : *Dockerfile are use to create images of an application*
+
+### Dockerfile format
 ```bash
 [INSTRUCTION] [ARGGUMENT]
 
@@ -118,12 +244,17 @@ COPY . /opt/source-code                        # copy project files from host to
 ENTRYPOINT 
 ```
 
-Dockerfile
+Usage : `docker build [OPTIONS] PATH | URL | -`
+
+### Build Images
 ```bash
 # Build an image
-docker build <PATH_TO_DOCKERFILE> -f Dockerfile -t <TAG_NAME>
+docker build -f Dockerfile -t <TAG_NAME> <PATH_TO_DOCKERFILE>
+## --file , -f		Name of the Dockerfile (Default is PATH/Dockerfile)
+## --tag , -t		Name and optionally a tag in the name:tag format
+
 # example
-docker build . -f Dockerfile -t drazic/my-app
+docker build -f Dockerfile -t drazic/my-app .
 
 # Push an image
 docker push <DOCKER_NAME>
