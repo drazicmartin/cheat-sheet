@@ -200,11 +200,17 @@ Port Mapping
 docker run -p <DOCKER_HOST_PORT>:<DOCKER_CONTAINER_PORT> <IMAGE_NAME>
 ```
 
-Memory Volume mapping
+Volume mapping
 ```bash
 docker run -v <MAPPED_FOLDER>:<DOCKER_FOLDER> <IMAGE_NAME>
 exmaple :
 docker run -v /opt/datadir:/var/lib/mysql mysql
+
+# or using volume name
+## first create a volume
+docker volume create <VOLUME_NAME>
+## then map it
+docker run -v <VOLUME_NAME>:<DOCKER_FOLDER> <IMAGE_NAME>
 ```
 
 [DEPRECATED] Running docker with network links
