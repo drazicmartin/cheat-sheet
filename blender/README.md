@@ -16,6 +16,28 @@ Local to World
 obj.matrix_world @ mathutils.Vector3
 ```
 
+### Interaction with `bpy`
+
+bpy :
+ - `app` : Application Data
+   - This module contains application values that remain unchanged during runtime.
+ - `context` : Context Access
+   - The context members available depend on the area of Blender which is currently being accessed.
+   - Note that all context values are readonly, but may be modified through the data API or by running operators
+ - `data` : Data Access
+   - This module is used for all Blender/Python access.
+ - `msgbus` : Message Bus
+ - `ops` : Operators
+   - Provides python access to calling operators, this includes operators written in C, Python or macros.
+   - Calling an operator in the wrong context will raise a RuntimeError, there is a poll() method to avoid this problem.
+   - Operators don’t have return values as you might expect, instead they return a set() which is made up of: {'RUNNING_MODAL', 'CANCELLED', 'FINISHED', 'PASS_THROUGH'}. Common return values are {'FINISHED'} and {'CANCELLED'}, the latter meaning that the operator execution was aborted without making any changes or saving an undo history entry.
+ - `path` : Path Utilities
+ - `props` : Property Definitions
+   - This module defines properties to extend Blender’s internal data. The result of these functions is used to assign properties to classes registered with Blender and can’t be used directly.
+ - `types` : Types
+ - `utils` : Utilities
+
+
 ### Standalone install
 ```bash
 pip install bpy
