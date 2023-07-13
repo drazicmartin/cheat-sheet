@@ -148,7 +148,7 @@ networks:
 
 ## Docker Run
 
-`Usage:  docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
+Usage: `docker run [OPTIONS] IMAGE [COMMAND] [ARG...]`
 
 Show running Docker
 ```bash
