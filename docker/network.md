@@ -2,7 +2,7 @@
 
 Docker implement DNS server that can resolve <DOCKER_NAME> to ip adresse of the container
 
-## 3 networks 
+## 3 main networks `drivers` 
 
 | Bridge | none | host |
 | :-: | :-: | :-: |
@@ -11,13 +11,26 @@ Docker implement DNS server that can resolve <DOCKER_NAME> to ip adresse of the 
 | --port to connect from external | Can not communicate with other containers | no need to specify --port |
 | multiple container can listen on the same port | Isolated network | only one container can listen on the a specific port |
 
-
-Create a bridge network
+Run a container on a specific network
 ```bash
+docker run --network <NETWORK_NAME | NETWORK_ID> [...]
+```
+
+Create a new network
+
+Usage: `docker network create [OPTIONS] NETWORK`
+
+```bash
+docker network create \
+  --driver <DRIVER_NAME> \
+  --subnet <SUB_NET>
+  <NETWORK_NAME>
+
+# exmaple
 docker network create \
   --driver bridge \
   --subnet 180.1.0.0/16
-  <NETWORK_NAME>
+  my-super-network
 ```
 
 List all networks
