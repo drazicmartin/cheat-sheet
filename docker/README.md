@@ -68,6 +68,11 @@ Info on image
 docker history <IMAGE_ID>
 ```
 
+Systeme size
+```bash
+docker system df
+```
+
 ---
 
 <a name="dc"/>
