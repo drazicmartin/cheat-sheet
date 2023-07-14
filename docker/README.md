@@ -26,7 +26,6 @@ root
 │   ├── volume
 ```
 
-
 <a name="ac"/>
 
 ## Access a container
@@ -287,7 +286,7 @@ docker rmi <IMAGE_NAME>
 
 <a name="df"/>
 
-### Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
+## Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
 
 **desc** : *Dockerfile are use to create images of an application*
 
@@ -306,9 +305,14 @@ COPY . /opt/source-code                        # copy project files from host to
 ENTRYPOINT 
 ```
 
+`ENTRYPOINT` : will not be override by by the input `COMMAND`
+
+`CMD` : will be override by the input `COMMAND` in `docker run <IMAGE_NAME> <COMMAND>`
+
+### Build Images
+
 Usage : `docker build [OPTIONS] PATH | URL | -`
 
-Build Images
 ```bash
 # Build an image
 docker build -f Dockerfile -t <TAG_NAME> <PATH_TO_DOCKERFILE>
