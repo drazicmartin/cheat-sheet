@@ -1,5 +1,7 @@
-# cheat-sheet
+# Cheat-Sheet
 Repository serve as a reminder for some commands and tools
+
+It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet/)
 
 ## Quick links
  - [Python](python/snippet.md)
