@@ -2,6 +2,7 @@
 
 ---
 - [Global](#global)
+- [Docker info](#info)
 - [Access a container](#ac)
 - [Docker Compose](#dc)
 - [Docker Run](#dr)
@@ -35,11 +36,6 @@ Run command inside a container
 docker exec <DOCKER_NAME | DOCKER_ID>
 ```
 
-Inspect Docker : `json format`
-```bash
-docker inspect <DOCKER_NAME | DOCKER_ID>
-```
-
 Logs Docker : `json format`
 ```bash
 docker logs <DOCKER_NAME | DOCKER_ID>
@@ -48,6 +44,29 @@ docker logs <DOCKER_NAME | DOCKER_ID>
 Easy Ubuntu bash
 ```bash
 docker run -it ubuntu bash
+```
+
+---
+
+<a name="info"/>
+
+## Docker info
+
+Inspect Docker : `json format`
+```bash
+docker inspect <DOCKER_NAME | DOCKER_ID>
+
+docker inspect <IMAGE_NAME>
+```
+
+Info in docker Host
+```bash
+docker info
+```
+
+Info on image
+```bash
+docker history <IMAGE_ID>
 ```
 
 ---
