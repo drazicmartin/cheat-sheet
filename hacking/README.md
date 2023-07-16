@@ -1,3 +1,3 @@
 # Hacking Main Page
 
- - [network](hacking/network.md)
+ - [network](network.md)
