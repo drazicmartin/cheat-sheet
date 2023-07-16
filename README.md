@@ -7,6 +7,7 @@ It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet
  - [Python](python/snippet.md)
  - [Docker](container/docker/README.md)
  - [Blender](blender/README.md)
+ - [Haking](hacking/README.md)
 
 ## File structure
 `README.md` is the entry point of the subject
