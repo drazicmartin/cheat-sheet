@@ -15,6 +15,7 @@ It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet
 [INTRODUCTION]
 [QUICK]
 [TIPS]
+[CONTENTS]
 ```
 
 ## Contributors
