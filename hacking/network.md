@@ -29,6 +29,7 @@ options :
       airodump-ng --bssid 00:11:22:33:44:55 --channel 2 --write save mon0`
       ```
 - `--write <FILE_NAME>` : Save the sniffing to a file
+  - Use [Wireshark]() to read the `.cap` file
 - `--channel <CHANNEL_ID>`: Select channel 
 - `--band` : Select frequency
   - "a" : use 5Gz only
