@@ -1,17 +1,26 @@
 # Network Hacking Main Page
 
+- [Changing MAC Address](#mac)
+- [WIFI Sniffing](#snif)
+- [Deauth Attack](#deauth)
+
 ## Show available INTERFACE info
 ```bash
 ifconfig
 iwconfig
 ```
 
+<a name="mac"/>
+
 ## Changing MAC adresse
+
 ```bash
 ifconfig <INTERFACE> down
 ifconfig <INTERFACE> hw ether <MAC_ADDRESS> # hw for hardware
 ifconfig <INTERFACE> up
 ```
+
+<a name="snif"/>
 
 ## WIFI Sniffing
 
@@ -45,6 +54,8 @@ Simple sniffing 2.4Gz
 ```bash
 airodump-ng <INTERFACE>
 ```
+
+<a name="deauth"/>
 
 ## Deauth Attack with `aireplay-ng`
 
