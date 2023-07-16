@@ -9,7 +9,7 @@ iwconfig
 ## Changing MAC adresse
 ```bash
 ifconfig <INTERFACE> down
-iwconfig <INETRFACE> hw ether <MAC_ADDRESS> # hw for hardware
+iwconfig <INTERFACE> hw ether <MAC_ADDRESS> # hw for hardware
 ifconfig <INTERFACE> up
 ```
 
