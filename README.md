@@ -5,7 +5,7 @@ It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet
 
 ## Quick links
  - [Python](python/snippet.md)
- - [Docker](docker/README.md)
+ - [Docker](container/docker/README.md)
  - [Blender](blender/README.md)
 
 ## File structure
