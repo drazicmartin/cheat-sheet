@@ -51,15 +51,15 @@ pip install bpy
 
 ```python
 def register():
-bpy.utils.register_class(DeleteAllObjectsOperator)
-bpy.utils.register_class(SynthKPTPanel)
+  bpy.utils.register_class(DeleteAllObjectsOperator)
+  bpy.utils.register_class(SynthKPTPanel)
 
 def unregister():
-bpy.utils.unregister_class(DeleteAllObjectsOperator)
-bpy.utils.unregister_class(SynthKPTPanel)
+  bpy.utils.unregister_class(DeleteAllObjectsOperator)
+  bpy.utils.unregister_class(SynthKPTPanel)
 
 if __name__ == "__main__":
-register()
+  register()
 ```
 
 <a name="panel"/>
@@ -81,7 +81,7 @@ layout = self.layout
 
 ## show operator
 layout.operator(
-operator='object.debug_camera'
+  operator='object.debug_camera'
 )
 
 ## display text
@@ -126,11 +126,11 @@ Create
 class MyProperties(PropertyGroup):
 
 min_distance_camera: IntProperty(
-name="Camera Min Distance",
-description=":",
-default=3,
-min=0,
-max=100
+  name="Camera Min Distance",
+  description=":",
+  default=3,
+  min=0,
+  max=100
 )
 ```
 
