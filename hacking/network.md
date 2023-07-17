@@ -3,6 +3,8 @@
 - [Changing MAC Address](#mac)
 - [WIFI Sniffing](#snif)
 - [Deauth Attack](#deauth)
+- [Wifi Pass Craking](#wifipasscrack)
+  - [WEP](#wep)
 
 ## Show available INTERFACE info
 ```bash
@@ -13,6 +15,10 @@ iwconfig
 <a name="mac"/>
 
 ## Changing MAC adresse
+
+**desc** : *Change MAC adresse*
+
+MAC = Media Access Control
 
 ```bash
 ifconfig <INTERFACE> down
@@ -30,6 +36,9 @@ ifconfig <INTERFACE> up
  - part of `aircrak-ng` suit
 
 usage : `airodump-ng <INTERFACE>`
+
+1. Must change wifi mode
+2. Run `airodump-ng`
 
 options :
 - `--bssid <MAC_ADDRESS>` : Select MAC adresse to sniff
@@ -61,10 +70,20 @@ airodump-ng <INTERFACE>
 
 usage : `aireplay-ng --deauth <#DEAUTH_PACKETS> -a <NETWORK_MAC> -c <TARGET_MAC> <INTERFACE>`
 
+1. Run `aerodump-ng`
+2. Run `aireplay-ng`
+
 example : 
 ```bash
 aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
 ```
 
+<a name="wifipasscrack"/>
+
+## WIFI password cracking
+
+<a name="wep"/>
+
+### WEP
 
 
