@@ -32,7 +32,7 @@ ifconfig <INTERFACE> up
 
 ## WIFI Sniffing
 
-`aerodump-ng` is a packet sniffer
+**desc** : *`aerodump-ng` is a packet sniffer program*
  - Must have a wifi key in wireless `monitor mode`
  - Use to capture packets within range
  - Display detailed info about networks
@@ -51,7 +51,7 @@ usage : `airodump-ng <INTERFACE>`
    # step 4
    ifconfig <INTERFACE> up
    ```
-3. Run `airodump-ng`
+2. Run `airodump-ng`
 
 options :
 - `--bssid <MAC_ADDRESS>` : Select MAC adresse to sniff
