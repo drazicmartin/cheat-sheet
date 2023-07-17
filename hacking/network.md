@@ -33,6 +33,7 @@ ifconfig <INTERFACE> up
 ## WIFI Sniffing
 
 `aerodump-ng` is a packet sniffer
+ - Must have a wifi key in wireless `monitor mode`
  - Use to capture packets within range
  - Display detailed info about networks
  - part of `aircrak-ng` suit
