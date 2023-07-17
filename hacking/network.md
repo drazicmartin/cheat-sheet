@@ -5,6 +5,8 @@
 - [Deauth Attack](#deauth)
 - [Wifi Pass Craking](#wifipasscrack)
   - [WEP](#wep)
+  - [WAP](#wap)
+  - [WAP2](#wap2)
 
 ## Show available INTERFACE info
 ```bash
@@ -86,4 +88,16 @@ aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
 
 ### WEP
 
+TODO
 
+<a name="wap"/>
+
+### WAP
+
+TODO
+
+<a name="wap2"/>
+
+### WAP2
+
+TODO
