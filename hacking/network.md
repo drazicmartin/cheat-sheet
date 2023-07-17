@@ -157,7 +157,7 @@ Used by some printer and easy connect with a WPS button on the router\
 We will bruteforce the password
 
 1. [Change wireless mode](#changewirelessmode) to monitor
-2. Router must be on WPS "auto" not "pushed"
+2. Router must be on WPS not be configured "Push Button" or "PBC", only way to know is to test
 3. List WPS available
     ```bash
      wash --interface <INTERFACE>
