@@ -41,7 +41,7 @@ bpy :
 ### Standalone install
 ```bash
 pip install bpy
-``
+```
 
 - Setup workflow for VScode
 
