@@ -109,8 +109,8 @@ bl_idname = "object.debug_camera"
 bl_label = "Debug camera"
 
 def execute(self, context):
-SceneManager.vis_camera_positions_possibilities()
-return {'FINISHED'}
+  SceneManager.vis_camera_positions_possibilities()
+  return {'FINISHED'}
 ```
 
 ### Scene Properties
