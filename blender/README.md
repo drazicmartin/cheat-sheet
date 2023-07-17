@@ -212,3 +212,13 @@ Viewport view
 bpy.ops.render.opengl(animation=True, sequencer=False, write_still=True)
 ```
 
+### Find object by type
+
+```python
+def find_objects_by_type(type_name):
+    objects = []
+    for obj in bpy.context.scene.objects:
+        if obj.type == type_name:
+            objects.append(obj)
+    return objects
+```
