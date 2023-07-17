@@ -18,7 +18,7 @@ iwconfig
 
 ## Changing MAC adresse
 
-**desc** : *Change MAC adresse*
+**DESC** : *Change MAC adresse*
 
 MAC = Media Access Control
 
@@ -32,13 +32,13 @@ ifconfig <INTERFACE> up
 
 ## WIFI Sniffing
 
-**desc** : *`aerodump-ng` is a packet sniffer program*
+**DESC** : *`aerodump-ng` is a packet sniffer program*
  - Must have a wifi key in wireless `monitor mode`
  - Use to capture packets within range
  - Display detailed info about networks
  - part of "aircrak-ng" suit
 
-usage : `airodump-ng <INTERFACE>`
+**USAGE** : `airodump-ng <INTERFACE>`
 
 1. Must change wireless mode : Managed to Monitor
    ```bash
@@ -81,7 +81,7 @@ airodump-ng <INTERFACE>
 
 ## Deauth Attack with `aireplay-ng`
 
-usage : `aireplay-ng --deauth <#DEAUTH_PACKETS> -a <NETWORK_MAC> -c <TARGET_MAC> <INTERFACE>`
+**USAGE** : `aireplay-ng --deauth <#DEAUTH_PACKETS> -a <NETWORK_MAC> -c <TARGET_MAC> <INTERFACE>`
 
 1. Run `aerodump-ng`
 2. Run `aireplay-ng`
