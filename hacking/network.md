@@ -28,6 +28,21 @@ ifconfig <INTERFACE> hw ether <MAC_ADDRESS> # hw for hardware
 ifconfig <INTERFACE> up
 ```
 
+<a name="changewirelessmode"/>
+
+## Changing wireless mode to Monitor
+
+```bash
+# step 1
+ifconfig <INTERFACE> down
+# step 2
+airmon-ng check kill
+# step 3
+iwconfig <INTERFACE> mode monitor
+# step 4
+ifconfig <INTERFACE> up
+```
+
 <a name="snif"/>
 
 ## WIFI Sniffing
@@ -40,17 +55,7 @@ ifconfig <INTERFACE> up
 
 **USAGE** : `airodump-ng <INTERFACE>`
 
-1. Must change wireless mode : Managed to Monitor
-   ```bash
-   # step 1
-   ifconfig <INTERFACE> down
-   # step 2
-   airmon-ng check kill
-   # step 3
-   iwconfig <INTERFACE> mode monitor
-   # step 4
-   ifconfig <INTERFACE> up
-   ```
+1. Must [change wireless mode](#changewirelessmode) : Managed to Monitor
 2. Run `airodump-ng`
 
 options :
