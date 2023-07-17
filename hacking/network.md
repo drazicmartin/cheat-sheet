@@ -2,9 +2,11 @@
 
 - [Changing MAC Address](#mac)
 - [WIFI Sniffing](#snif)
-- [Deauth Attack](#deauth)
+- [De-auth Attack](#deauth)
+- [Fake-auth Attack](#fakeauth)
 - [WIFI Password Craking](#wifipasscrack)
   - [WEP](#wep)
+  - [WPS](#wps)
   - [WAP](#wap)
   - [WAP2](#wap2)
 
@@ -146,7 +148,7 @@ We will perform an association (not connection) to force the network to send IVs
     aircrack-ng <FILE_NAME>.cap
     ```
    
-<a name="wap"/>
+<a name="wps"/>
 
 ### WPS
 
@@ -165,6 +167,8 @@ We will bruteforce the password
     ```bash
     reaver --bssid <NETWORK_MAC> --channel <CHANNEL> --interface <INTERFACE> -vvv --no-associate
     ```
+
+<a name="wap"/>
 
 ### WAP
 
