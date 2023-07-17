@@ -82,7 +82,7 @@ docker system df
 
 **desc** : *Docker compose is use to manage multiple containers*
 
- - docker compose use yaml format \
+ - docker compose use yaml format
  - versions : 
    - v1 : don't use services
    - v2 & v3 : use services and are now merged
