@@ -39,8 +39,18 @@ ifconfig <INTERFACE> up
 
 usage : `airodump-ng <INTERFACE>`
 
-1. Must change wifi mode
-2. Run `airodump-ng`
+1. Must change wireless mode : Managed to Monitor
+   ```bash
+   # step 1
+   ifconfig <INTERFACE> down
+   # step 2
+   airmon-ng check kill
+   # step 3
+   iwconfig <INTERFACE> mode monitor
+   # step 4
+   ifconfig <INTERFACE> up
+   ```
+3. Run `airodump-ng`
 
 options :
 - `--bssid <MAC_ADDRESS>` : Select MAC adresse to sniff
