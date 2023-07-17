@@ -3,7 +3,7 @@
 - [Changing MAC Address](#mac)
 - [WIFI Sniffing](#snif)
 - [Deauth Attack](#deauth)
-- [Wifi Pass Craking](#wifipasscrack)
+- [WIFI Password Craking](#wifipasscrack)
   - [WEP](#wep)
   - [WAP](#wap)
   - [WAP2](#wap2)
