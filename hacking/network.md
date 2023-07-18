@@ -8,8 +8,7 @@
 - [WIFI Password Craking](#wifipasscrack)
   - [WEP](#wep)
   - [WPS](#wps)
-  - [WAP](#wap)
-  - [WAP2](#wap2)
+  - [WPA & WPA](#wpa)
 
 ## Show available INTERFACE info
 ```bash
@@ -168,28 +167,34 @@ We will perform an association (not connection) to force the network to send IVs
 
 **DESC** : WPS is not a type of encryption but it's a method to connect without entering password\
 Used by some printer and easy connect with a WPS button on the router\
-We will bruteforce the password
+We will bruteforce the password\
+Router must be on WPS not be configured "Push Button" or "PBC", only way to know is to test
 
 1. [Change wireless mode](#changewirelessmode) to monitor
-2. Router must be on WPS not be configured "Push Button" or "PBC", only way to know is to test
-3. List WPS available
+2. List WPS available
     ```bash
      wash --interface <INTERFACE>
      ```
-4. Do Some (30) [Fake Authentification Attack](#fakeauth)
-5. Bruteforce with `reaver`
+3. Do Some (30) [Fake Authentification Attack](#fakeauth)
+4. Bruteforce with `reaver`
     ```bash
     reaver --bssid <NETWORK_MAC> --channel <CHANNEL> --interface <INTERFACE> -vvv --no-associate
     ```
 
-<a name="wap"/>
+<a name="wpa"/>
 
-### WAP
+### WPA & WPA2
 
-TODO
+**DESC** : WPA fixed WEP vulnerabilities, one way is to bruteforce the password with wordlist.\
+The main idea is to catch the handshake to then bruteforce\
+MIC = Message Integrity Code
+This is the code we try to get correct by testing password from worlist and the data of the handshake (SP address, STA Address, AP Nonce, STA Nonce, EAPOL, Payload).
 
-<a name="wap2"/>
-
-### WAP2
-
-TODO
+1. [Change wireless mode](#changewirelessmode) to monitor
+2. [Sniff packets](#snif) with on a specific bssid and channel (Wait for capturing the handshake) and save them in a file <FILE_NAME>.cap
+3. Do some (4) [Fake Authentification Attack](#fakeauth)
+    1. force the handshake on one user
+4. With [wordlist](#wordlist) run `aircrack-ng`
+    ```bash
+    aircrack-ng <FILE_NAME>.cap -w <WORDLIST_FILE>
+    ```
