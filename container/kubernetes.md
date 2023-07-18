@@ -33,13 +33,15 @@ Tow different nodes
 
 ## kubeclt
 
+Create a pod with a docker image
 ```bash
-# Create a pod with a docker image
 kubectl run <POD_NAME> --image=<IMAGE_NAME>
-
-kubectl cluster-info
 ```
 
+Get Cluster info :
+```bash
+kubectl cluster-info
+```
 
 Get list of obj : `pods` | `nodes`
 ```bash
