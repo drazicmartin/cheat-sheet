@@ -16,6 +16,17 @@ Local to World
 obj.matrix_world @ mathutils.Vector3
 ```
 
+Set selected specific objects
+```python
+# Deselect all objects
+bpy.ops.object.select_all(action='DESELECT')
+
+# Set the object by name as selected
+selected_object_name = "Cube"  # Replace with the name of your desired object
+selected_object = scene.objects[selected_object_name]
+selected_object.select_set(True)
+```
+
 ### Interaction with `bpy`
 
 bpy :
