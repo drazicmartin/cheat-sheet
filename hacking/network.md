@@ -139,7 +139,7 @@ IV is added at the beginning of each packet send to the router
 #### If network is busy
 
 1. [Change wireless mode](#changewirelessmode) to monitor
-2. [Sniff packets](#snif) with on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
+2. [Sniff packets](#snif) on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
 3. Analyse captured IVs by running
   ```bash
   aircrack-ng <FILE_NAME>.cap
@@ -150,7 +150,7 @@ IV is added at the beginning of each packet send to the router
 We will perform an association (not connection) to force the network to send IVs
 
 1. [Change wireless mode](#changewirelessmode) to monitor
-2. [Sniff packets](#snif) with on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
+2. [Sniff packets](#snif) on a specific bssid and channel (Capture a lot of `#Data` / IVs) and save them in a file <FILE_NAME>.cap
 3. Do one [Fake Authentification Attack](#fakeauth)
 4. Wait for an `ARP` packet, and use it to force network to create new IVs
     ```bash
@@ -191,7 +191,7 @@ MIC = Message Integrity Code
 This is the code we try to get correct by testing password from worlist and the data of the handshake (SP address, STA Address, AP Nonce, STA Nonce, EAPOL, Payload).
 
 1. [Change wireless mode](#changewirelessmode) to monitor
-2. [Sniff packets](#snif) with on a specific bssid and channel (Wait for capturing the handshake) and save them in a file <FILE_NAME>.cap
+2. [Sniff packets](#snif) on a specific bssid and channel (Wait for capturing the handshake) and save them in a file <FILE_NAME>.cap
 3. Do some (4) [Fake Authentification Attack](#fakeauth)
     1. force the handshake on one user
 4. With [wordlist](#wordlist) run `aircrack-ng`
