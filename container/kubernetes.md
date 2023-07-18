@@ -58,6 +58,11 @@ kubectl describe pod <POD_NAME>
 | We can have multiple docker that do different stuff |
 | Docker in the same pod can access each other with `localhost` |
 
+Start a pods with a yaml configuration
+```bash
+kubectl create -f <YAML_FILE>
+```
+
 Pods use yaml file to describe their behavior. They impelment the following keywork
 ```yaml
 apiVersion: <VERSION> # See Kind and Version
