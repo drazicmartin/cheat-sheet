@@ -2,6 +2,7 @@
 
 - [Introduction](#intro)
 - [kubetct](#kubetctl)
+- [Pods](#pods)
 
 <a name="intro"/>
 
@@ -44,6 +45,8 @@ kubectl get nodes
 # Get info on a pod
 kubectl describe pod <POD_NAME>
 ```
+
+<a name="pods"/> 
 
 ## PODS
 
