@@ -43,7 +43,6 @@ kubectl cluster-info
 
 Get list of obj : `pods` | `nodes`
 ```bash
-# List obj in a cluster
 kubectl get obj
 ```
 
