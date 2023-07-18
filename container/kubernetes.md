@@ -77,6 +77,11 @@ Start a pods with a yaml configuration
 kubectl create -f <YAML_FILE>
 ```
 
+If YAML is update use this to apply change
+```bash
+kubectl apply -f <YAML_FILE>
+```
+
 Pods use yaml file to describe their configuration. They implement the following keywork
 ```yaml
 apiVersion: <VERSION> # See Kind and Version
