@@ -84,11 +84,11 @@ apiVersion: v1        # See Kind and Version
 kind: Pod             # See Kind and Version
 metadata:
   name: myapp-pod
-  labels:             # you can create every labels you want for example :
+  labels:             # You can create every labels you want for example :
     app: myapp
     type : front-end
 spec:
-  containers:         # array of container with name and image like so
+  containers:         # Array of container with name and image like so
     - name: nginx-container
       image: nginx
 ```
@@ -100,3 +100,17 @@ Table Kind and Version
 | Service | v1 |
 | ReplicaSet | apps/v1 |
 | Deployment | apps/v1 |
+
+More on yaml configuration:
+
+Adding environments variables
+```yaml
+spec:
+  containers:
+    - name: <CONTAINER_NAME>
+      image: <DOCKER_IMAGE>
+      env:            # Array of name value
+        - name: <ENV_VAR_NAME>
+          value: <ENV_VAR_VALUE>
+
+```
