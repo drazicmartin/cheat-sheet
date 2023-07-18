@@ -40,13 +40,13 @@ plt.show()
 ## Fichier PKL
 ### write
 ```python
-with('filename.pkl', 'wb') as f:
+with open('filename.pkl', 'wb') as f:
 # dump information to that file
 pickle.dump(data, f)
 ```
 ### read
 ```python
-with('filename.pkl', 'rb') as f:
+with open('filename.pkl', 'rb') as f:
 # dump information to that file
 data = pickle.load(f)
 ```
