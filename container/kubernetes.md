@@ -38,15 +38,18 @@ Tow different nodes
 kubectl run <POD_NAME> --image=<IMAGE_NAME>
 
 kubectl cluster-info
+```
 
-# List pods in a cluster
-kubectl get pods
 
-# List nodes in a cluster
-kubectl get nodes
+Get list of obj : `pods` | `nodes`
+```bash
+# List obj in a cluster
+kubectl get obj
+```
 
-# Get info on a pod
-kubectl describe pod <POD_NAME>
+Get info on obj : `pods` | `nodes`
+```bash
+kubectl describe obj <OBJ_NAME>
 ```
 
 <a name="pods"/> 
