@@ -23,7 +23,7 @@ It used multiple components to work :
 - Scheduler
   - Distributing works across
 
-Tow different nodes\
+Tow different nodes
 | Master Node | Worker Node |
 | :-: | :-: |
 | Control woker nodes | Run containers |
