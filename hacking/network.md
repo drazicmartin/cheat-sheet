@@ -9,6 +9,7 @@
   - [WEP](#wep)
   - [WPS](#wps)
   - [WPA & WPA](#wpa)
+- [Set Security to your Router](#router)
 
 ## Show available INTERFACE info
 ```bash
@@ -198,3 +199,20 @@ This is the code we try to get correct by testing password from worlist and the 
     ```bash
     aircrack-ng <FILE_NAME>.cap -w <WORDLIST_FILE>
     ```
+
+<a name="router"/>
+
+## Secrutiy for Router
+
+Make sur you set WPA2 as encryption
+Make sur you password is long with capital leters and special characters
+Make sur to desable WPS
+
+Find router ip
+```bash
+[Windows]
+Get-NetRoute
+
+[Linux]
+ip route
+```
