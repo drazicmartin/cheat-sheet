@@ -48,7 +48,7 @@ kubectl get nodes
 kubectl describe pod <POD_NAME>
 ```
 
-## POD 
+## PODS
 
 **desc** : pod are a single instance of an application
 
@@ -57,3 +57,41 @@ kubectl describe pod <POD_NAME>
 | Offen containe only one docker |
 | We can have multiple docker that do different stuff |
 | Docker in the same pod can access each other with `localhost` |
+
+Pods use yaml file to describe their behavior. They impelment the following keywork
+```yaml
+apiVersion: <VERSION> # See Kind and Version
+kind: <KIND>          # See Kind and Version
+metadata:
+  name: <POD_NAME>
+  labels:             # you can create every labels you want for example :
+    app: myapp
+    type: front-end
+spec:
+  containers:         # array of container with name and image like so
+    - name: <CONTAINER_NAME>
+      image: <DOCKER_IMAGE>
+```
+
+example
+```yaml
+apiVersion: v1        # See Kind and Version
+kind: Pod             # See Kind and Version
+metadata:
+  name: myapp-pod
+  labels:             # you can create every labels you want for example :
+    app: myapp
+    type : front-end
+spec:
+  containers:         # array of container with name and image like so
+    - name: nginx-container
+      image: nginx
+```
+
+Table Kind and Version\
+| Kind | Version |
+| :-: | :-: |
+| Pod | v1 |
+| Service | v1 |
+| ReplicaSet | apps/v1 |
+| Deployment | apps/v1 |
