@@ -52,7 +52,12 @@ kubectl get `resource` -o wide
 
 Get info on **resource** : `pods` | `nodes`
 ```bash
-kubectl describe `resource` <OBJ_NAME>
+kubectl describe `resource` <RESOURCE_NAME>
+```
+
+Delete a **resource** : `pods` | `nodes`
+```bash
+kubectl delete `resource` <RESOURCE_NAME>
 ```
 
 <a name="pods"/> 
