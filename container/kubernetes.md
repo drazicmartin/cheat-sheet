@@ -40,6 +40,9 @@ kubectl run <POD_NAME> --image=<IMAGE_NAME>
 kubectl cluster-info
 
 # List pods in a cluster
+kubectl get pods
+
+# List nodes in a cluster
 kubectl get nodes
 
 # Get info on a pod
