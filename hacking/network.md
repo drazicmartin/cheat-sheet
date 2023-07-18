@@ -4,6 +4,7 @@
 - [WIFI Sniffing](#snif)
 - [De-auth Attack](#deauth)
 - [Fake-auth Attack](#fakeauth)
+- [Creating a Wordlist](#wordlist)
 - [WIFI Password Craking](#wifipasscrack)
   - [WEP](#wep)
   - [WPS](#wps)
@@ -107,6 +108,19 @@ aireplay-ng --deauth 100000 -a 11:22:33:44:55:66 -c 00:11:22:33:44:55 mon0
 example:
 ```bash
 aireplay-ng --fakeauth 0 -a 11:22:33:44:55:66 -h 00:11:22:33:44:55 mon0
+```
+
+<a name="wordlist"/>
+
+## Wordlist with `crunch`
+
+**Desc** : Wordlist are used to bruteforce password, here is how to create our own wordlist
+
+**USAGE** : `crunch <MIN> <MAX> <CHARACTERS> -t <PATERN> -o <FILE_NAME>`
+
+example
+```bash
+crunch 6 8 123abc$ -t a@@@@b -o wordlist.txt
 ```
 
 <a name="wifipasscrack"/>
