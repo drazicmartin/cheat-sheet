@@ -216,3 +216,18 @@ Get-NetRoute
 [Linux]
 ip route
 ```
+
+## Network Inforamtion Gathering
+
+With `netdiscover`
+```bash
+netdiscover -r <IP_RANGE>
+
+example:
+netdiscover -r 192.8.4.1/24
+```
+
+With `zenmap`, a GUI for `nmap`
+1. Set an IP range in the target field
+2. Select a Profile
+3. Run scan
