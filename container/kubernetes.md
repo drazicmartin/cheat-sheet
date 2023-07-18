@@ -8,7 +8,7 @@
 ## Introductions
 
 It is used to deploy and orchestrate containers\
-It used multiple components to work :\
+It used multiple components to work :
 - API server
   - front end 
 - etcd
@@ -47,7 +47,7 @@ kubectl describe pod <POD_NAME>
 
 ## PODS
 
-**desc** : pod are a single instance of an application
+**DESC** : pod are a single instance of an application
 
 | Pod |
 | :-: |
@@ -85,7 +85,7 @@ spec:
       image: nginx
 ```
 
-Table Kind and Version\
+Table Kind and Version
 | Kind | Version |
 | :-: | :-: |
 | Pod | v1 |
