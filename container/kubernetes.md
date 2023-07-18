@@ -43,16 +43,16 @@ Get Cluster info :
 kubectl cluster-info
 ```
 
-Get list of obj : `pods` | `nodes`
+Get list of *obj* : `pods` | `nodes`
 ```bash
-kubectl get obj
+kubectl get `obj`
 # For more info use
-kubectl get obj -o wide
+kubectl get `obj` -o wide
 ```
 
-Get info on obj : `pods` | `nodes`
+Get info on *obj* : `pods` | `nodes`
 ```bash
-kubectl describe obj <OBJ_NAME>
+kubectl describe `obj` <OBJ_NAME>
 ```
 
 <a name="pods"/> 
