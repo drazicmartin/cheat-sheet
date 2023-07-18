@@ -7,10 +7,8 @@
 
 ## Introductions
 
-It is used to deploy and orchestrate containers
-
-It used multiple components to work :
-
+It is used to deploy and orchestrate containers\
+It used multiple components to work :\
 - API server
   - front end 
 - etcd
@@ -24,8 +22,7 @@ It used multiple components to work :
 - Scheduler
   - Distributing works across
 
-Tow different nodes
-
+Tow different nodes\
 | Master Node | Worker Node |
 | :-: | :-: |
 | Control woker nodes | Run containers |
