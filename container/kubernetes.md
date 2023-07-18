@@ -63,7 +63,7 @@ Start a pods with a yaml configuration
 kubectl create -f <YAML_FILE>
 ```
 
-Pods use yaml file to describe their behavior. They impelment the following keywork
+Pods use yaml file to describe their configuration. They implement the following keywork
 ```yaml
 apiVersion: <VERSION> # See Kind and Version
 kind: <KIND>          # See Kind and Version
