@@ -18,6 +18,9 @@ obj.matrix_world @ mathutils.Vector3
 
 Set selected specific objects
 ```python
+# Get the active scene
+scene = bpy.context.scene
+
 # Deselect all objects
 bpy.ops.object.select_all(action='DESELECT')
 
