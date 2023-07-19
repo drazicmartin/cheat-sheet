@@ -1,4 +1,4 @@
 # Python Main Page
 
-- [Snippet](snippets.md)
+- [Snippets](snippet.md)
 - [Packages](package.md)
