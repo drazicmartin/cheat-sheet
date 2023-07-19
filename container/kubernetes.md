@@ -3,6 +3,7 @@
 - [Introduction](#intro)
 - [kubetct](#kubetctl)
 - [Pods](#pods)
+- [ReplicaSet](#replicaset)
 
 <a name="intro"/>
 
@@ -134,6 +135,8 @@ spec:
         - name: <ENV_VAR_NAME>
           value: <ENV_VAR_VALUE>
 ```
+
+<a name="replicaset"/>
 
 ## ReplicaSet
 
