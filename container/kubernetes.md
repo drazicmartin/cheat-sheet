@@ -23,6 +23,8 @@ It used multiple components to work :
 - Scheduler
   - Distributing works across
 
+Kubernetes use yaml or json format to describe configuration file.
+
 Tow different nodes
 | Master Node | Worker Node |
 | :-: | :-: |
@@ -43,19 +45,19 @@ Get Cluster info :
 kubectl cluster-info
 ```
 
-Get list of **resource** : `pods` | `nodes`
+Get list of **resource** : `pods` | `nodes` | `replicaset`
 ```bash
 kubectl get `resource`
 # For more info use
 kubectl get `resource` -o wide
 ```
 
-Get info on **resource** : `pods` | `nodes`
+Get info on **resource** : `pod` | `node` | `replicaset`
 ```bash
 kubectl describe `resource` <RESOURCE_NAME>
 ```
 
-Delete a **resource** : `pods` | `nodes`
+Delete a **resource** : `pod` | `node` | `replicaset`
 ```bash
 kubectl delete `resource` <RESOURCE_NAME>
 ```
@@ -72,7 +74,7 @@ kubectl delete `resource` <RESOURCE_NAME>
 | We can have multiple docker that do different stuff |
 | Docker in the same pod can access each other with `localhost` |
 
-Start a pods with a yaml configuration
+Start a pods with a yaml definition
 ```bash
 kubectl create -f <YAML_FILE>
 ```
@@ -82,7 +84,7 @@ If YAML is update use this to apply change
 kubectl apply -f <YAML_FILE>
 ```
 
-Pods use yaml file to describe their configuration. They implement the following keywork
+Pod configuration are structured as follow 
 ```yaml
 apiVersion: <VERSION> # See Kind and Version
 kind: <KIND>          # See Kind and Version
@@ -131,5 +133,43 @@ spec:
       env:            # Array of name value
         - name: <ENV_VAR_NAME>
           value: <ENV_VAR_VALUE>
+```
 
+## ReplicaSet
+
+**DESC** : Replica Set are use to manage multiple pods at the same time.
+
+ReplicatSet configuration are structured as follow
+```bash
+apiVersion: apps/v1   # See Kind and Version
+kind: ReplicaSet      # See Kind and Version
+metadata:
+  name: myapp-replicaset
+  labels:             # You can create every labels you want for example :
+    app: myapp-replicaset
+spec:
+  selector:           # Select the Pods to managed
+    matchLabels:
+      app: myapp
+  replicas: 3         # Number of Pods to be created
+  template:           # Template of a Pod definition with label match with selector
+    [POD DEFINITION]
+```
+
+Start the ReplcaSet with a yaml definition
+```bash
+kubectl create -f <YAML_FILE>
+```
+
+Update the definition : 3 methods
+```bash
+[1]
+kubectl edit replicaset <REPLICASET_NAME>
+
+[2]
+kubectl scale replicaset <REPLICASET_NAME> --replicas=5
+kubectl scale -f <YAML_FILE> --replicas=5
+
+[3]
+kubectl repalce -f <YAML_FILE>
 ```
