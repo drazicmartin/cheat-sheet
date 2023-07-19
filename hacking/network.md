@@ -9,7 +9,8 @@
   - [WEP](#wep)
   - [WPS](#wps)
   - [WPA & WPA](#wpa)
-- [Set Security to your Router](#router)
+- [Implement Security for Router](#router)
+- [Network Inforamtion Gathering](#nig)
 
 ## Show available INTERFACE info
 ```bash
@@ -202,7 +203,7 @@ This is the code we try to get correct by testing password from worlist and the 
 
 <a name="router"/>
 
-## Secrutiy for Router
+## Implement Security for Router
 
 Make sur you set WPA2 as encryption
 Make sur you password is long with capital leters and special characters
@@ -216,6 +217,8 @@ Get-NetRoute
 [Linux]
 ip route
 ```
+
+<a name="nig"/>
 
 ## Network Inforamtion Gathering
 
