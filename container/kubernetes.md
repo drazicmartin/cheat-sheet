@@ -5,6 +5,10 @@
 - [Pods](#pods)
 - [ReplicaSet](#replicaset)
 
+## Quick
+
+- [All Alias](https://gist.github.com/doevelopper/ff4a9a211e74f8a2d44eb4afb21f0a38)
+
 <a name="intro"/>
 
 ## Introductions
@@ -36,6 +40,13 @@ Tow different nodes
 
 ## kubeclt
 
+### Resources
+| Name | Full | Alias |
+| :-: | :-: | :-: |
+| Pod | pod | po |
+| Nodes | node | TODO |
+| ReplicaSet | replicaset | rs |
+
 Create a pod with a docker image
 ```bash
 kubectl run <POD_NAME> --image=<IMAGE_NAME>
@@ -46,19 +57,19 @@ Get Cluster info :
 kubectl cluster-info
 ```
 
-Get list of **resource** : `pods` | `nodes` | `replicaset`
+Get list of `resource`
 ```bash
 kubectl get `resource`
 # For more info use
 kubectl get `resource` -o wide
 ```
 
-Get info on **resource** : `pod` | `node` | `replicaset`
+Get info on `resource`
 ```bash
 kubectl describe `resource` <RESOURCE_NAME>
 ```
 
-Delete a **resource** : `pod` | `node` | `replicaset`
+Delete a `resource`
 ```bash
 kubectl delete `resource` <RESOURCE_NAME>
 ```
