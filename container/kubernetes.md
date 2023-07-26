@@ -162,7 +162,7 @@ spec:
 **DESC** : Replica Set are use to manage multiple pods at the same time.
 
 ReplicatSet configuration are structured as follow
-```bash
+```yaml
 apiVersion: apps/v1   # See Kind and Version
 kind: ReplicaSet      # See Kind and Version
 metadata:
@@ -203,7 +203,7 @@ kubectl repalce -f <YAML_FILE>
 **DESC** : Deployment are use to manage ReplicaSet.\
 
 Deployment configuration are structured as ReplicaSet exept for kind field
-```bash
+```yaml
 apiVersion: apps/v1   # See Kind and Version
 kind: Deployment      # See Kind and Version
 metadata:
