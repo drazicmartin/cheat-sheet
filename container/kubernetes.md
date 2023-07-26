@@ -43,7 +43,7 @@ Tow different nodes
 
 <a name="kubectl"/>
 
-## kubeclt
+## kubectl
 
 ### Resources
 | Name | Full | Alias |
