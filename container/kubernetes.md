@@ -53,6 +53,14 @@ Tow different nodes
 | ReplicaSet | replicaset | rs |
 | Deployment | deployment | deploy |
 
+Table Kind and Version
+| Kind | Version |
+| :-: | :-: |
+| Pod | v1 |
+| Service | v1 |
+| ReplicaSet | apps/v1 |
+| Deployment | apps/v1 |
+
 Create a pod with a docker image
 ```bash
 kubectl run <POD_NAME> --image=<IMAGE_NAME>
@@ -82,6 +90,20 @@ Delete a `resource`
 kubectl delete `resource` <RESOURCE_NAME>
 ```
 
+Update the `resource` definition : 3 methods
+1. ```bash
+   kubectl edit replicaset <REPLICASET_NAME>
+   ```
+
+2. ```bash
+   kubectl scale replicaset <REPLICASET_NAME> --replicas=5
+   kubectl scale -f <YAML_FILE> --replicas=5
+   ```
+
+3. ```bash
+   kubectl <replace | apply | patch> -f <YAML_FILE>
+   ```
+
 <a name="pods"/> 
 
 ## PODS
@@ -97,11 +119,6 @@ kubectl delete `resource` <RESOURCE_NAME>
 Start a pods with a yaml definition
 ```bash
 kubectl create -f <YAML_FILE>
-```
-
-If YAML is update use this to apply change
-```bash
-kubectl apply -f <YAML_FILE>
 ```
 
 Pod configuration are structured as follow 
@@ -133,16 +150,6 @@ spec:
     - name: nginx-container
       image: nginx
 ```
-
-Table Kind and Version
-| Kind | Version |
-| :-: | :-: |
-| Pod | v1 |
-| Service | v1 |
-| ReplicaSet | apps/v1 |
-| Deployment | apps/v1 |
-
-More on yaml configuration:
 
 Adding environments variables
 ```yaml
@@ -181,19 +188,6 @@ spec:
 Start the ReplcaSet with a yaml definition
 ```bash
 kubectl create -f <YAML_FILE>
-```
-
-Update the definition : 3 methods
-```bash
-[1]
-kubectl edit replicaset <REPLICASET_NAME>
-
-[2]
-kubectl scale replicaset <REPLICASET_NAME> --replicas=5
-kubectl scale -f <YAML_FILE> --replicas=5
-
-[3]
-kubectl repalce -f <YAML_FILE>
 ```
 
 <a name="deployment"/>
