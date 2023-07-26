@@ -9,6 +9,10 @@
 ## Quick
 
 - [All Alias](https://gist.github.com/doevelopper/ff4a9a211e74f8a2d44eb4afb21f0a38)
+- ```bash
+  kubectl get all
+  ```
+  
 
 <a name="intro"/>
 
@@ -64,6 +68,8 @@ Get list of `resource`
 kubectl get `resource`
 # For more info use
 kubectl get `resource` -o wide
+# Get all resources at once
+kubectl get all
 ```
 
 Get info on `resource`
