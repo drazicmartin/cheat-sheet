@@ -199,12 +199,12 @@ spec:
 
 <a />
 
-### Update and roolback
+### Update and rollback
 
 | Strategies | Description |
 | :-: | :-: |
 | Recreate | 1. destroy all <br> 2. recreate all |
-| Roling Update | 1. destroy and recreate one by one <br> Is the default strategie |
+| Rolling Update | 1. destroy and recreate one by one <br> Is the default strategie |
 
 
 
