@@ -4,6 +4,7 @@
 - [kubetct](#kubetctl)
 - [Pods](#pods)
 - [ReplicaSet](#replicaset)
+- [Deployment](#deployment)
 
 ## Quick
 
@@ -46,7 +47,7 @@ Tow different nodes
 | Pod | pod | po |
 | Nodes | node | TODO |
 | ReplicaSet | replicaset | rs |
-| Deployment | deployment | TODO |
+| Deployment | deployment | deploy |
 
 Create a pod with a docker image
 ```bash
@@ -188,3 +189,27 @@ kubectl scale -f <YAML_FILE> --replicas=5
 [3]
 kubectl repalce -f <YAML_FILE>
 ```
+
+<a name="deployment"/>
+
+## Deployment
+
+**DESC** : Deployment are use to manage ReplicaSet.\
+
+Deployment configuration are structured as ReplicaSet exept for kind field
+```bash
+apiVersion: apps/v1   # See Kind and Version
+kind: Deployment      # See Kind and Version
+metadata:
+  name: myapp-replicaset
+  labels:             # You can create every labels you want for example :
+    app: myapp-replicaset
+spec:
+  selector:           # Select the Pods to managed
+    matchLabels:
+      app: myapp
+  replicas: 3         # Number of Pods to be created
+  template:           # Template of a Pod definition with label match with selector
+    [POD DEFINITION]
+```
+
