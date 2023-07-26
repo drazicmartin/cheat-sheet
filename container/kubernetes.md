@@ -215,6 +215,12 @@ spec:
 
 To Update see [Update Resource](#updateresource) with YAML
 
+To know status of the update
+```bash
+kubectl rollout status <DEPLOY_NAME>
+kubectl rollout history <DEPLOY_NAME>
+```
+
 To rollback an update:
 ```bash
 kubectl rollout undo <DEPLOYMENT_NAME>
