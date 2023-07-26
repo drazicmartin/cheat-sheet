@@ -215,7 +215,7 @@ spec:
 
 To Update see [Update Resource](#updateresource) with YAML
 
-Manage the rollout of one or many resources.
+#### Manage the rollout of one or many resources.
 ```yaml
 Valid resource types include:
   *  deployments
