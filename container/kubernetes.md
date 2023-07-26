@@ -2,6 +2,7 @@
 
 - [Introduction](#intro)
 - [kubetct](#kubectl)
+  - [Update Resource](#updateresource)
 - [Pods](#pods)
 - [ReplicaSet](#replicaset)
 - [Deployment](#deployment)
@@ -91,17 +92,22 @@ Delete a `resource`
 kubectl delete `resource` <RESOURCE_NAME>
 ```
 
+<a name="updateresource"/>
+
 Update the `resource` definition : 3 methods
-1. ```bash
-   kubectl edit replicaset <REPLICASET_NAME>
+1. Direct edit
+   ```bash
+   kubectl edit `resource` <RESOURCE_NAME>
    ```
 
-2. ```bash
+2. Scale
+   ```bash
    kubectl scale replicaset <REPLICASET_NAME> --replicas=5
    kubectl scale -f <YAML_FILE> --replicas=5
    ```
 
-3. ```bash
+3. YAML
+   ```bash
    kubectl <replace | apply | patch> -f <YAML_FILE>
    ```
 
@@ -206,6 +212,8 @@ spec:
 | :-: | :-: |
 | Recreate | 1. destroy all <br> 2. recreate all |
 | Rolling Update | 1. destroy and recreate one by one <br> Is the default strategie |
+
+To Update see [Update Resource](#updateresource) with YAML
 
 To rollback an update:
 ```bash
