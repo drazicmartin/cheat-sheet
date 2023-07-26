@@ -215,10 +215,25 @@ spec:
 
 To Update see [Update Resource](#updateresource) with YAML
 
-To know status of the update
+Manage the rollout of one or many resources.
+```yaml
+Valid resource types include:
+  *  deployments
+  *  daemonsets
+  *  statefulsets
+
+Available Commands:
+  history       View rollout history
+  pause         Mark the provided resource as paused
+  restart       Restart a resource
+  resume        Resume a paused resource
+  status        Show the status of the rollout
+  undo          Undo a previous rollout
+```
+
+Usage:
 ```bash
-kubectl rollout status <DEPLOY_NAME>
-kubectl rollout history <DEPLOY_NAME>
+kubectl rollout SUBCOMMAND [options]
 ```
 
 To rollback an update:
