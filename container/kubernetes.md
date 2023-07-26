@@ -206,5 +206,8 @@ spec:
 | Recreate | 1. destroy all <br> 2. recreate all |
 | Rolling Update | 1. destroy and recreate one by one <br> Is the default strategie |
 
-
+To rollback an update:
+```bash
+kubectl rollout undo <DEPLOYMENT_NAME>
+```
 
