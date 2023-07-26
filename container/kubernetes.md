@@ -46,6 +46,7 @@ Tow different nodes
 | Pod | pod | po |
 | Nodes | node | TODO |
 | ReplicaSet | replicaset | rs |
+| Deployment | deployment | TODO |
 
 Create a pod with a docker image
 ```bash
