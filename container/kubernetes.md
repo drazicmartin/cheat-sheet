@@ -1,7 +1,7 @@
 # Kubernets 
 
 - [Introduction](#intro)
-- [kubetct](#kubetctl)
+- [kubetct](#kubectl)
 - [Pods](#pods)
 - [ReplicaSet](#replicaset)
 - [Deployment](#deployment)
@@ -136,27 +136,11 @@ spec:
       image: <DOCKER_IMAGE>
 ```
 
-example
-```yaml
-apiVersion: v1        # See Kind and Version
-kind: Pod             # See Kind and Version
-metadata:
-  name: myapp-pod
-  labels:             # You can create every labels you want for example :
-    app: myapp
-    type : front-end
-spec:
-  containers:         # Array of container with name and image like so
-    - name: nginx-container
-      image: nginx
-```
-
 Adding environments variables
 ```yaml
 spec:
   containers:
-    - name: <CONTAINER_NAME>
-      image: <DOCKER_IMAGE>
+    - [...]
       env:            # Array of name value
         - name: <ENV_VAR_NAME>
           value: <ENV_VAR_VALUE>
@@ -173,13 +157,13 @@ ReplicatSet configuration are structured as follow
 apiVersion: apps/v1   # See Kind and Version
 kind: ReplicaSet      # See Kind and Version
 metadata:
-  name: myapp-replicaset
+  name: <REPLICATSET_NAME>
   labels:             # You can create every labels you want for example :
-    app: myapp-replicaset
+    <REPLICATSET_LABEL_NAME>: <REPLICATSET_LABEL_VALUE>
 spec:
   selector:           # Select the Pods to managed
     matchLabels:
-      app: myapp
+      <POD_LABEL_NAME>: <POD_LABEL_VALUE>
   replicas: 3         # Number of Pods to be created
   template:           # Template of a Pod definition with label match with selector
     [POD DEFINITION]
@@ -194,20 +178,20 @@ kubectl create -f <YAML_FILE>
 
 ## Deployment
 
-**DESC** : Deployment are use to manage ReplicaSet.\
+**DESC** : Deployment are use to manage ReplicaSet.
 
 Deployment configuration are structured as ReplicaSet exept for kind field
 ```yaml
 apiVersion: apps/v1   # See Kind and Version
 kind: Deployment      # See Kind and Version
 metadata:
-  name: myapp-replicaset
+  name: <DELPOYMENT_NAME>
   labels:             # You can create every labels you want for example :
-    app: myapp-replicaset
+    <DELPOYMENT_LABEL_NAME>: <DEPLOYMENT_LABEL_VALUE>
 spec:
   selector:           # Select the Pods to managed
     matchLabels:
-      app: myapp
+      <POD_LABEL_NAME>: <POD_LABEL_VALUE>
   replicas: 3         # Number of Pods to be created
   template:           # Template of a Pod definition with label match with selector
     [POD DEFINITION]
