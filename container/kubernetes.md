@@ -221,7 +221,9 @@ Valid resource types include:
   *  deployments
   *  daemonsets
   *  statefulsets
+```
 
+```yaml
 Available Commands:
   history       View rollout history
   pause         Mark the provided resource as paused
@@ -236,8 +238,15 @@ Usage:
 kubectl rollout SUBCOMMAND [options]
 ```
 
-To rollback an update:
+Example:
 ```bash
-kubectl rollout undo <DEPLOYMENT_NAME>
+# Rollback to the previous deployment
+kubectl rollout undo deployment/abc
+
+# Restart a deployment
+kubectl rollout restart deployment/abc
+
+# Restart deployments with the app=nginx label
+kubectl rollout restart deployment --selector=app=nginx
 ```
 
