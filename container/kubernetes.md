@@ -197,7 +197,9 @@ spec:
     [POD DEFINITION]
 ```
 
-## Update and roolback
+<a />
+
+### Update and roolback
 
 | Strategies | Description |
 | :-: | :-: |
