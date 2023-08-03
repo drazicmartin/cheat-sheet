@@ -40,7 +40,7 @@ Rotation
 Apply Quaternion rotation on vector
 quaternion @ vector
 
-Apply Euler rotation on vector
+Apply rotation
 `Vector | Quaternion | Euler | Matrix`.rotate(`Quaternion | Euler | Matrix`)
 ```
 
