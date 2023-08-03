@@ -30,6 +30,11 @@ selected_object = scene.objects[selected_object_name]
 selected_object.select_set(True)
 ```
 
+Update all dependencies of previous transformations
+```python
+bpy.context.view_layer.update()
+```
+
 ### Interaction with `bpy`
 
 bpy :
