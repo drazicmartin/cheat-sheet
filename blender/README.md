@@ -35,6 +35,15 @@ Update all dependencies of previous transformations
 bpy.context.view_layer.update()
 ```
 
+Rotation
+```python
+Apply Quaternion rotation on vector
+quaternion @ vector
+
+Apply Euler rotation on vector
+`Vector | Quaternion | Euler | Matrix`.rotate(`Quaternion | Euler | Matrix`)
+```
+
 ### Interaction with `bpy`
 
 bpy :
