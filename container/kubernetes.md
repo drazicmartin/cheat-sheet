@@ -54,6 +54,7 @@ Tow different nodes
 | Nodes | node | TODO |
 | ReplicaSet | replicaset | rs |
 | Deployment | deployment | deploy |
+| Service | service | svc |
 
 Table Kind and Version
 | Kind | Version |
