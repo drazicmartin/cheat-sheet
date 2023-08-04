@@ -4,6 +4,12 @@
  - [Panel](#panel)
  - [Operators](#operator)
  - [Scene Properties](#sp)
+ - [Hook Frame](#hf)
+ - [Usefull Fonctions](#uf)
+   - [Render Image](#ri)
+   - [Find Objects by type](#fobt)
+   - [Delete objects](#do)
+   - [Create mesh from scratch](#cmfs)
 
 ## Blender Add-ons
 
@@ -182,6 +188,8 @@ Use in code
 context.window_manager.gkpt_tool.min_distance_camera
 ```
 
+<a name="hf"/>
+
 ### Hook frame
 
 Register
@@ -201,7 +209,9 @@ def frame_handler(scene, depsgraph):
     print(depsgraph)
 ```
 
-### Deleting object
+<a name="do"/>
+
+### Delete objects
 
 ```python
 def delete_objects_in_collection(collection_name):
@@ -215,6 +225,8 @@ def delete_objects_in_collection(collection_name):
         obj.select_set(True)
     bpy.ops.object.delete()
 ```
+
+<a name="ri"/>
 
 ### Render Image
 
@@ -243,7 +255,9 @@ Viewport view
 bpy.ops.render.opengl(animation=True, sequencer=False, write_still=True)
 ```
 
-### Find object by type
+<a name="fobt"/>
+
+### Find objects by type
 
 ```python
 def find_objects_by_type(type_name):
@@ -253,3 +267,7 @@ def find_objects_by_type(type_name):
             objects.append(obj)
     return objects
 ```
+
+<a name="cmfs"/>
+
+### Create mesh from scratch
