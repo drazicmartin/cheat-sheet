@@ -5,13 +5,13 @@
  - [Operators](#operator)
  - [Scene Properties](#sp)
  - [Hook Frame](#hf)
- - [Usefull Fonctions](#uf)
+ - [Usefull Functions](#uf)
    - [Render Image](#ri)
    - [Find Objects by type](#fobt)
    - [Delete objects](#do)
    - [Create mesh from scratch](#cmfs)
-
-## Blender Add-ons
+  
+---
 
 <a name="tips"/>
 
@@ -82,7 +82,7 @@ pip install bpy
 
 - https://polynook.com/learn/set-up-blender-addon-development-environment-in-windows
 
-### Main
+## Main
 
 ```python
 def register():
@@ -99,7 +99,7 @@ if __name__ == "__main__":
 
 <a name="panel"/>
 
-### Panel
+## Panel
 
 Create a new panel named : `SynthKPT`
 
@@ -134,7 +134,7 @@ row.prop(scene, "frame_end")
 
 <a name="operator"/>
 
-### Operator
+## Operator
 
 Create Operator
 
@@ -190,7 +190,7 @@ context.window_manager.gkpt_tool.min_distance_camera
 
 <a name="hf"/>
 
-### Hook frame
+## Hook frame
 
 Register
 
@@ -208,6 +208,10 @@ def frame_handler(scene, depsgraph):
     print(scene)
     print(depsgraph)
 ```
+
+<a name="uf"/>
+
+## Usefull Functions
 
 <a name="do"/>
 
@@ -271,3 +275,7 @@ def find_objects_by_type(type_name):
 <a name="cmfs"/>
 
 ### Create mesh from scratch
+
+```python
+new_mesh = bpy.data.meshes.new('new_mesh')
+```
