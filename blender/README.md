@@ -278,4 +278,7 @@ def find_objects_by_type(type_name):
 
 ```python
 new_mesh = bpy.data.meshes.new('new_mesh')
+new_mesh.from_pydata(vertices, edges, faces)
+new_mesh.update()
+new_object = bpy.data.objects.new('new_object', new_mesh)
 ```
