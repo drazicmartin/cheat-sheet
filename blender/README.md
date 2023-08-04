@@ -3,6 +3,7 @@
  - [Tips](#tips)
  - [Panel](#panel)
  - [Operators](#operator)
+ - [Scene Properties](#sp)
 
 ## Blender Add-ons
 
@@ -140,6 +141,8 @@ def execute(self, context):
   SceneManager.vis_camera_positions_possibilities()
   return {'FINISHED'}
 ```
+
+<a name="sp"/>
 
 ### Scene Properties
 
