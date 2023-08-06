@@ -66,7 +66,7 @@ Event handler
   ```svelte
   <button on:click|once={handleClick}> Click me </button>
   ```
-  - List of Modifier
+  - List of event Modifier
     - `preventDefault` : calls event.preventDefault() before running the handler. Useful for client-side form handling, for example.
     - `stopPropagation` : calls event.stopPropagation(), preventing the event reaching the next element
     - `passive` : improves scrolling performance on touch/wheel events (Svelte will add it automatically where it's safe to do so)
