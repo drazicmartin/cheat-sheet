@@ -189,7 +189,7 @@ kubectl create -f <YAML_FILE>
 
 ## Deployment
 
-**DESC** : Deployment are use to manage ReplicaSet.
+**DESC** : Deployment is a higher-level concept that manages ReplicaSets and provides declarative updates to Pods along with a lot of other useful features
 
 Deployment configuration are structured as ReplicaSet exept for kind field
 ```yaml
