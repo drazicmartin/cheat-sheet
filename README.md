@@ -10,6 +10,8 @@ It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet
    - [Kubernetes](container/kubernetes.md)
  - [Blender](blender/README.md)
  - [Hacking](hacking/README.md)
+ - [Web Tech](web/README.md)
+   - [Svelte & SvelteKit](web/svelte/basics.md)
 
 ## File structure
 `README.md` is the entry point of the subject
