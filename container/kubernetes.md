@@ -263,7 +263,7 @@ kubectl rollout restart deployment --selector=app=nginx
 | Service Type | Description |
 | :-: | :-: |
 | NodePort | Made internal pod accessible from a Node through a port |
-| ClusterIp | Virtual IP to have multiple pods accessible through one IP |
+| ClusterIp | Virtual IP to have multiple pods accessible through one IP, default value of spec.type |
 | Load Balancer | Load Balance the workload to multiple instance, see compatible cloud providers (gcp, aws, azure) |
 
 All Service Type configuration are structured as follow:
