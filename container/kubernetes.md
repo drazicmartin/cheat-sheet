@@ -48,7 +48,7 @@ Tow different nodes
 
 ## kubectl
 
-### Resources
+### Resources Type
 | Name | Full | Alias |
 | :-: | :-: | :-: |
 | Pod | pod | po |
@@ -75,31 +75,33 @@ Get Cluster info :
 kubectl cluster-info
 ```
 
-Get list of `resource`
+Get list of resource
 ```bash
-kubectl get `resource`
+kubectl get <RESOURCE_TYPE>
 # For more info use
-kubectl get `resource` -o wide
+kubectl get <RESOURCE_TYPE> -o wide
 # Get all resources at once
 kubectl get all
 ```
 
-Get info on `resource`
+Get description on a resource
 ```bash
-kubectl describe `resource` <RESOURCE_NAME>
+Usage:
+  kubectl describe (-f FILENAME | TYPE [NAME_PREFIX | -l label] | TYPE/NAME) [options]
 ```
 
-Delete a `resource`
+Delete a resource
 ```bash
-kubectl delete `resource` <RESOURCE_NAME>
+Usage:
+  kubectl delete ([-f FILENAME] | [-k DIRECTORY] | TYPE [(NAME | -l label | --all)]) [options]
 ```
 
 <a name="updateresource"/>
 
-Update the `resource` definition : 3 methods
+Update the <RESOURCE_TYPE> definition : 3 methods
 1. Direct edit
    ```bash
-   kubectl edit `resource` <RESOURCE_NAME>
+   kubectl edit <RESOURCE_TYPE> <RESOURCE_NAME>
    ```
 
 2. Scale
