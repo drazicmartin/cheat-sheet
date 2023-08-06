@@ -56,10 +56,8 @@ Event handler
   </div>
   ```
 - List of events:
-  | Event Name |
+  | click | change | mousemove |
   | :-:   |
-  | click |
-  | mousemove |
 - Modifier : DOM event handlers can have modifiers that alter their behaviour
   ```svelte
   <button on:click|once={handleClick}> Click me </button>
