@@ -278,6 +278,11 @@ spec:
   [See spec bellow]
 ```
 
+Get URL of a service:
+```bash
+minikube service <SERVICE_NAME> --url
+```
+
 - NodePort example
   ```yaml
   spec:
