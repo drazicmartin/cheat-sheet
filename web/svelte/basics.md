@@ -141,6 +141,10 @@ Binding
   	</label>
   {/each}
   ```
+- Shorthand if variable has same name as binding
+  ```svelte
+  <textarea bind:value={value} /> == <textarea bind:value />
+  ```
 
 Props with default value
 - Nested.svelte
