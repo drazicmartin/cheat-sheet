@@ -25,9 +25,7 @@ Show varibale value in HTML like so :
 
 Shorthand attributes if attribute and variable name have the same name : 
 ```svelte
-<img src={src} />
- is the same as
-<img {src} />
+<img src={src} /> = <img {src} />
 ```
 
 Import with
