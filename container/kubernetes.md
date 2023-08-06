@@ -82,6 +82,8 @@ kubectl get <RESOURCE_TYPE>
 kubectl get <RESOURCE_TYPE> -o wide
 # Get all resources at once
 kubectl get all
+# Get some different resources type at once
+kubectl get <RESOURCE_TYPE>,<RESOURCE_TYPE>,<RESOURCE_TYPE>,...
 ```
 
 Get description on a resource
