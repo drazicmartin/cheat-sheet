@@ -7,6 +7,7 @@
 - [ReplicaSet](#replicaset)
 - [Deployment](#deployment)
   - [Update and Rollback](#uar)
+- [Service](#service)
 
 ## Quick
 
@@ -251,3 +252,47 @@ kubectl rollout restart deployment/abc
 kubectl rollout restart deployment --selector=app=nginx
 ```
 
+<a name="service"/>
+
+## Service
+
+**DESC** : Use to manage connection between deployments
+
+| Service Type | Description |
+| :-: | :-: |
+| NodePort | Made internal pod accessible from a Node through a port |
+| ClusterIp | Virtual IP to have multiple pods accessible through one IP |
+| Load Balancer | Load Balance the workload to multiple instance, see compatible cloud providers (gcp, aws, azure) |
+
+All Service Type configuration are structured as follow:
+```yaml
+apiVersion: v1
+kind: Service
+metadata:
+  name: <SERVICE_NAME>
+spec:
+  [See spec bellow]
+```
+
+- NodePort example
+  ```yaml
+  spec:
+    type: NodePort
+    port:
+      - targetPort: 80
+        port: 80
+        nodePort: 30008
+    selector:
+      [LABEL_NAME]: [LABEL_VALUE]
+  ```
+- ClusterIP example
+  ```yaml
+  spec:
+    type: ClusterIP
+    port:
+      - targetPort: 80
+        port: 80
+    selector:
+      [LABEL_NAME]: [LABEL_VALUE]
+  ```
+- Load Balancer : see with your clouds providers
