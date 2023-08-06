@@ -77,6 +77,43 @@ Event handler
     - `self` : only trigger handler if event.target is the element itself
     - `trusted` : only trigger handler if event.isTrusted is true. I.e. if the event is triggered by a user action.
 
+Creating And Passing Event
+- Simple Example
+  - ```svelte
+    <script>
+    	import { createEventDispatcher } from 'svelte';
+    
+    	const dispatch = createEventDispatcher();
+    
+    	function sayHello() {
+    		dispatch('message', {
+    			text: 'Hello!'
+    		});
+    	}
+    </script>
+  
+    <button on:click={sayHello}> Click to say hello </button>
+    ```
+  - ```svelte
+    <script>
+    	import Inner from './Inner.svelte';
+    
+    	function handleMessage(event) {
+    		alert(event.detail.text);
+    	}
+    </script>
+    
+    <Inner on:message={handleMessage} />
+    ```
+- Event Forwarding
+  ```svelte
+  <script>
+    import Inner from './Inner.svelte';
+  </script>
+  
+  <Inner on:message />
+  ```
+
 Reactive values
 ```js
 let count = 0;
