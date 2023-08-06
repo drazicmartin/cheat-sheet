@@ -123,6 +123,25 @@ $: if (count >= 10) {
 }
 ```
 
+Binding
+- value
+  ```svelte
+  <input bind:value={name} />
+  ```
+- checked
+  ```svelte
+  <input type="checkbox" bind:checked={yes} />
+  ```
+- group
+  ```svelte
+  {#each menu as flavour}
+  	<label>
+  		<input type="checkbox" bind:group={flavours} name="flavours" value={flavour} />
+  		{flavour}
+  	</label>
+  {/each}
+  ```
+
 Props with default value
 - Nested.svelte
   ```svelte
