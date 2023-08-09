@@ -10,6 +10,39 @@ img_tmp = img; scale_tmp=50; cv2.imshow("window_name", cv2.resize(img_tmp, (int(
 TODO
 ```
 
+## Numpy
+
+### Numpy
+save
+```python
+# Single
+np.save("test.npy", a)
+  
+# Multy
+with open('test.npy', 'wb') as f:
+  np.save(f, a)
+  np.save(f, b)
+```
+load
+```python
+# Single
+  
+a = np.load("test.npy")
+
+# Multy
+with open('test.npy', 'rb') as f:
+  a = np.load(f)
+  b = np.load(f)
+```
+Flatten / Ravel / Unfold Array
+```python
+ndarray.flatten(order='C')
+
+np.ravel(a, order='C')
+# is equivalent to :
+ndarray.reshape(-1, order=order)
+```
+
 ## Multi processing / Muli threding
   
 ```python
