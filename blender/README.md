@@ -26,8 +26,11 @@ obj.matrix_world @ mathutils.Vector3
 
 Get Active element and Selected elements
 ```python
-selected = bpy.context.selected_objects
-active = bpy.context.view_layer.objects.active
+selected = bpy.context.selected_objects            -> <class 'list'>
+selected = bpy.context.view_layer.objects.selected -> <class 'bpy_prop_collection'>
+
+active = bpy.context.active_object                 -> <class 'bpy_types.Object'>
+active = bpy.context.view_layer.objects.active     -> <class 'bpy_types.Object'>
 ```
 
 Set selected specific objects
