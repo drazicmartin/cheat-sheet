@@ -10,7 +10,8 @@
    - [Find Objects by type](#fobt)
    - [Delete objects](#do)
    - [Create mesh from scratch](#cmfs)
-  
+- Mesh
+ - [UV Map](#uv)
 ---
 
 <a name="tips"/>
@@ -287,4 +288,21 @@ new_mesh = bpy.data.meshes.new('new_mesh')
 new_mesh.from_pydata(vertices, edges, faces)
 new_mesh.update()
 new_object = bpy.data.objects.new('new_object', new_mesh)
+```
+
+
+## Mesh
+
+<a name="uv"/>
+
+### UV map
+
+```python
+obj.type == "MESH"
+
+# Create a new UV map
+obj.data.uv_layers.new(name="UV_name", do_init=False)
+
+# Get UV map of an objects
+obj.data.uv_layers.get(<UV_NAME>).uv
 ```
