@@ -17,7 +17,7 @@ save
 ```python
 # Single
 np.save("test.npy", a)
-  
+
 # Multy
 with open('test.npy', 'wb') as f:
   np.save(f, a)
@@ -26,7 +26,7 @@ with open('test.npy', 'wb') as f:
 load
 ```python
 # Single
-  
+
 a = np.load("test.npy")
 
 # Multy
