@@ -23,6 +23,12 @@ Local to World
 obj.matrix_world @ mathutils.Vector3
 ```
 
+Get Active element and Selected elements
+```python
+selected = bpy.context.selected_objects
+active = bpy.context.view_layer.objects.active
+```
+
 Set selected specific objects
 ```python
 # Get the active scene
