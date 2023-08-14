@@ -3,6 +3,8 @@
 ## Quick
 
 - [Svelt example](https://svelte.dev/examples/hello-world)
+- UI
+  - [flowbite-svelte](https://github.com/themesberg/flowbite-svelte)
 
 ## File Structure
 
