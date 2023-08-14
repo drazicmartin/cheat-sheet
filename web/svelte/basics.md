@@ -159,6 +159,25 @@ $: if (count >= 10) {
   ```svelte
   <textarea bind:value={value} /> == <textarea bind:value />
   ```
+- Binding in for each block
+  ```svelte
+  {#each todos as todo}
+  <div class:done={todo.done}>
+    <input type="checkbox" bind:checked={todo.done} />
+
+    <input placeholder="What needs to be done?" bind:value={todo.text} />
+  </div>
+  {/each}
+  ```
+- Binding dimentions
+  - They are `readonly`
+    | clientWidth | clientHeight | offsetWidth  | offsetHeight  |
+    | :-:         |  :-:         |     :-:      |     :-:       |
+    ```svelte
+    <div bind:clientWidth={w} bind:clientHeight={h}>
+      <span style="font-size: {size}px">{text}</span>
+    </div>
+    ```
 
 <a name="props">
 
