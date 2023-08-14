@@ -1,5 +1,12 @@
 # Svelte Basics
 
+- [Reactivity](#reactity)
+- [Props](#props)
+- [Logic](#logic)
+- [Event](#events)
+- [Binding](#binding)
+- [Lifecycle](#life)
+
 ## Quick
 
 - [Svelt example](https://svelte.dev/examples/hello-world)
@@ -46,7 +53,9 @@ function incrementCount() {
 }
 ```
 
-Event handler
+<a name="events">
+
+# Event handler
 - Simple Example
   ```svelte
   <button on:click={incrementCount}>
@@ -112,7 +121,9 @@ Creating And Passing Event
   <Inner on:message />
   ```
 
-Reactive values
+<a name="reactivity">
+
+# Reactive values
 ```js
 let count = 0;
 $: doubled = count * 2;
@@ -122,6 +133,8 @@ $: if (count >= 10) {
   count = 9;
 }
 ```
+
+<a name="binding">
 
 Binding
 - value
@@ -146,7 +159,9 @@ Binding
   <textarea bind:value={value} /> == <textarea bind:value />
   ```
 
-Props with default value
+<a name="props">
+
+# Props with default value
 - Nested.svelte
   ```svelte
   <script>
@@ -167,6 +182,11 @@ If you have an object of properties, you can 'spread' them onto a component inst
 Globals
  - `$$props` : reference all the props that were passed into a component, including ones that weren't declared with export
 
+
+<a name="logic">
+  
+# Logic
+  
 If Logic
 - ```svelte
   {#if user.loggedIn}
