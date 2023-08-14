@@ -1,6 +1,6 @@
 # Svelte Basics
 
-- [Reactivity](#reactity)
+- [Reactivity](#reactivity)
 - [Props](#props)
 - [Logic](#logic)
 - [Event](#events)
