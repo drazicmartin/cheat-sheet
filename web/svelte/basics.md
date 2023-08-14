@@ -55,6 +55,7 @@ function incrementCount() {
 
 <a name="events">
 
+# Event
 # Event handler
 - Simple Example
   ```svelte
@@ -136,7 +137,7 @@ $: if (count >= 10) {
 
 <a name="binding">
 
-Binding
+# Binding
 - value
   ```svelte
   <input bind:value={name} />
@@ -186,7 +187,7 @@ Globals
 <a name="logic">
   
 # Logic
-  
+
 If Logic
 - ```svelte
   {#if user.loggedIn}
