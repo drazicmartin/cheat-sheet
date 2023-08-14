@@ -178,6 +178,11 @@ $: if (count >= 10) {
       <span style="font-size: {size}px">{text}</span>
     </div>
     ```
+- Bindig `this`
+  Note that the value of canvas will be undefined until the component has mounted, so we put the logic inside the onMount
+  ```svelte
+  <canvas bind:this={canvas} width={32} height={32} />
+  ```
 
 <a name="props">
 
