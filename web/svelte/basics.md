@@ -7,6 +7,7 @@
 - [Binding](#binding)
 - [Lifecycle](#lifecycle)
 - [Store](#store)
+- [Motion](#motion)
 
 ## Quick
 
@@ -419,3 +420,42 @@ Store binding
     <button on:click={() => ($name += '!')}> Add exclamation mark! </button>
     ```
   - `$name += '!'` assignment is equivalent to `name.set($name + '!')`
+
+<a name="motion"/>
+
+# Motion
+
+They work like store that allow animation
+
+- spring
+  - import
+    ```svelte
+    import { spring } from 'svelte/motion';
+    ```
+  - example
+    ````svelte
+    import { spring } from 'svelte/motion';
+  
+    let coords = spring(
+      { x: 50, y: 50 },
+      {
+        stiffness: 0.1,
+        damping: 0.25
+      }
+    );
+    ```
+- tweened
+  - import
+    ```svelte
+    import { tweened } from 'svelte/motion';
+    ```
+  - example
+    ```svelte
+    import { tweened } from 'svelte/motion';
+	  import { cubicOut } from 'svelte/easing';
+    
+    const progress = tweened(0, {
+  		duration: 400,
+  		easing: cubicOut
+  	});
+    ```
