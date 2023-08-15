@@ -378,7 +378,7 @@ A store is simply an object with a subscribe method that allows interested parti
 
 Custom store
 - example stores.js
-  ````js
+  ```js
   import { writable } from 'svelte/store';
   
   function createCount() {
