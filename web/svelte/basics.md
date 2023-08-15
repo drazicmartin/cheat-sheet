@@ -21,7 +21,7 @@
   [CODE GOES HERE]
 </script>
 
-[HTML GOES HERE]
+[MARKUP GOES HERE]
 
 <style>
   [CSS GOES HERE]
