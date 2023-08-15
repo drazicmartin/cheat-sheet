@@ -375,3 +375,44 @@ A store is simply an object with a subscribe method that allows interested parti
 
     export const elapsed = derived(time, ($time) => Math.round(($time - start) / 1000));
     ```
+
+Custom store
+- example stores.js
+  ````js
+  import { writable } from 'svelte/store';
+  
+  function createCount() {
+  	const { subscribe, set, update } = writable(0);
+  
+  	return {
+  		subscribe,
+  		increment: () => update((n) => n + 1),
+  		decrement: () => update((n) => n - 1),
+  		reset: () => set(0)
+  	};
+  }
+  
+  export const count = createCount();
+  ```
+
+Store binding
+- example
+  - stores.js
+    ````js
+    import { writable, derived } from 'svelte/store';
+
+    export const name = writable('world');
+    
+    export const greeting = derived(name, ($name) => `Hello ${$name}!`);
+    ```
+  - App.svelte
+    ```svelte
+    <script>
+    	import { name, greeting } from './stores.js';
+    </script>
+    
+    <h1>{$greeting}</h1>
+    <input bind:value={$name} />
+    
+    <button on:click={() => ($name += '!')}> Add exclamation mark! </button>
+    ```
