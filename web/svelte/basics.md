@@ -289,13 +289,13 @@ Every component has a lifecycle that starts when it is created, and ends when it
           photos = await res.json();
         });
         ```
- - `beforeUpdate` : Schedules work to happen immediately before the DOM is updated
- - `afterUpdate` : Used for running code once the DOM is in sync with your data
- - `onDestroy` : run code when your component is destroyed
-   - import
-      ```svelte
-      import { onDestroy } from 'svelte';
-      ```
+   - `beforeUpdate` : Schedules work to happen immediately before the DOM is updated
+   - `afterUpdate` : Used for running code once the DOM is in sync with your data
+   - `onDestroy` : run code when your component is destroyed
+     - import
+       ```svelte
+       import { onDestroy } from 'svelte';
+       ```
 - `tick` : The tick function is unlike other lifecycle functions in that you can call it any time, not just when the component first initialises. It returns a promise that resolves as soon as any pending state changes have been applied to the DOM (or immediately, if there are no pending state changes).
   - usage in async function
     ````svelte
