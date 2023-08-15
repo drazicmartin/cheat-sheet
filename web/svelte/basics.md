@@ -56,7 +56,7 @@ function incrementCount() {
 <a name="events">
 
 # Event
-# Event handler
+## Event handler
 - Simple Example
   ```svelte
   <button on:click={incrementCount}>
@@ -85,7 +85,7 @@ function incrementCount() {
     - `self` : only trigger handler if event.target is the element itself
     - `trusted` : only trigger handler if event.isTrusted is true. I.e. if the event is triggered by a user action.
 
-Creating And Passing Event
+## Creating And Passing Event
 - Simple Example
   - ```svelte
     <script>
