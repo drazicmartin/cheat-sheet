@@ -398,7 +398,7 @@ Custom store
 Store binding
 - example
   - stores.js
-    ````js
+    ```js
     import { writable, derived } from 'svelte/store';
 
     export const name = writable('world');
