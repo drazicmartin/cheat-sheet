@@ -306,3 +306,34 @@ Every component has a lifecycle that starts when it is created, and ends when it
 <a name="store"/>
     
 # Store
+
+A store is simply an object with a subscribe method that allows interested parties to be notified whenever the store value changes
+
+- `writable`
+  - store.js
+    ```js
+    import { writable } from 'svelte/store';
+    export const count = writable(0);
+    ```
+  - methods
+    - `subscribe`
+      ```js
+      import { count } from './stores.js';
+      count.subscribe((value) => {
+    		countValue = value;
+    	});
+      ```
+    - `update`
+      ```js
+      import { count } from './stores.js';
+      function decrement() {
+    		count.update((n) => n - 1);
+    	}
+      ```
+    - `set`
+      ```js
+      import { count } from './stores.js';
+      function reset() {
+    		count.set(0);
+    	}
+      ```
