@@ -318,10 +318,25 @@ A store is simply an object with a subscribe method that allows interested parti
   - methods
     - `subscribe`
       ```js
+      <script>
+        import { count } from './stores.js';
+        import { onDestroy } from 'svelte';
+  
+        let countValue;
+        const unsubscribe = count.subscribe((value) => {
+      		countValue = value;
+      	});
+  
+        onDestroy(unsubscribe);
+      </script>
+
+      <h1>The count is {countValue}</h1>
+      ```
+      Or using `$` reserved character
+      ```js
       import { count } from './stores.js';
-      count.subscribe((value) => {
-    		countValue = value;
-    	});
+      
+      <h1>The count is {$count}</h1>
       ```
     - `update`
       ```js
