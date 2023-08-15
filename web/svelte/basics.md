@@ -342,7 +342,7 @@ A store is simply an object with a subscribe method that allows interested parti
       ```js
       import { count } from './stores.js';
       function decrement() {
-    		count.update((n) => n - 1);
+        count.update((n) => n - 1);
     	}
       ```
     - `set`
