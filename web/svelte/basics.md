@@ -6,6 +6,7 @@
 - [Event](#events)
 - [Binding](#binding)
 - [Lifecycle](#lifecycle)
+- [Store](#store)
 
 ## Quick
 
@@ -265,7 +266,7 @@ Await block
   {/await}
   ```
 
-<a name="lifecycle">
+<a name="lifecycle"/>
 
 Every component has a lifecycle that starts when it is created, and ends when it is destroyed. There are a handful of functions that allow you to run code at key moments during that lifecycle.
 
@@ -301,4 +302,7 @@ Every component has a lifecycle that starts when it is created, and ends when it
     ````svelte
     await tick();
     ```
+
+<a name="store"/>
     
+# Store
