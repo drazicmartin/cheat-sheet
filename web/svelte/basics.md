@@ -433,7 +433,7 @@ They work like store that allow animation
     import { spring } from 'svelte/motion';
     ```
   - example
-    ````svelte
+    ```svelte
     import { spring } from 'svelte/motion';
   
     let coords = spring(
@@ -452,7 +452,7 @@ They work like store that allow animation
   - example
     ```svelte
     import { tweened } from 'svelte/motion';
-	  import { cubicOut } from 'svelte/easing';
+    import { cubicOut } from 'svelte/easing';
     
     const progress = tweened(0, {
   		duration: 400,
