@@ -311,9 +311,8 @@ COPY . /opt/source-code                        # copy project files from host to
 ENTRYPOINT 
 ```
 
-`ENTRYPOINT` : will not be override by by the input `COMMAND`
-
-`CMD` : will be override by the input `COMMAND` in `docker run <IMAGE_NAME> <COMMAND>`
+- `ENTRYPOINT` : will not be override by by the input `COMMAND`
+- `CMD` : will be override by the input `COMMAND` in `docker run <IMAGE_NAME> <COMMAND>`
 
 ### Build Images
 
