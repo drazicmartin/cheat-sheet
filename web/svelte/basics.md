@@ -5,7 +5,7 @@
 - [Logic](#logic)
 - [Event](#events)
 - [Binding](#binding)
-- [Lifecycle](#life)
+- [Lifecycle](#lifecycle)
 
 ## Quick
 
@@ -264,3 +264,41 @@ Await block
     <p>the number is {number}</p>
   {/await}
   ```
+
+<a name="lifecycle">
+
+Every component has a lifecycle that starts when it is created, and ends when it is destroyed. There are a handful of functions that allow you to run code at key moments during that lifecycle.
+
+- Component lifecycles in order : 
+  - `onMount` : runs after the component is first rendered to the DOM
+    - import
+      ```svelte
+      import { onMount } from 'svelte';
+      ```
+    - usage :
+        ````svelte
+        onMount(() => { <CODE> });
+
+        onMount(async () => { <CODE> });
+        ```   
+    - It's recommended to put the fetch in onMount rather than at the top level of the <script> because of server-side rendering (SSR).
+      - example:
+        ```svelte
+        onMount(async () => {
+          const res = await fetch(`/tutorial/api/album`);
+          photos = await res.json();
+        });
+        ```
+ - `beforeUpdate` : Schedules work to happen immediately before the DOM is updated
+ - `afterUpdate` : Used for running code once the DOM is in sync with your data
+ - `onDestroy` : run code when your component is destroyed
+   - import
+      ```svelte
+      import { onDestroy } from 'svelte';
+      ```
+- `tick` : The tick function is unlike other lifecycle functions in that you can call it any time, not just when the component first initialises. It returns a promise that resolves as soon as any pending state changes have been applied to the DOM (or immediately, if there are no pending state changes).
+  - usage in async function
+    ````svelte
+    await tick();
+    ```
+    
