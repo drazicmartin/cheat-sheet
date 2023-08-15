@@ -349,9 +349,9 @@ A store is simply an object with a subscribe method that allows interested parti
       ```js
       import { count } from './stores.js';
       function reset() {
-    		count.set(0);
+        count.set(0);
         // equivalent to
-        count = 0
+        count = 0;
     	}
       ```
 - `readable` : The first argument to readable is an initial value, which can be null or undefined if you don't have one yet. The second argument is a start function that takes a set callback and returns a stop function. The start function is called when the store gets its first subscriber; stop is called when the last subscriber unsubscribes.
