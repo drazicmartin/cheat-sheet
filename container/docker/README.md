@@ -294,7 +294,7 @@ docker rmi <IMAGE_NAME>
 
 <a name="df"/>
 
-## Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
+### Dockerfile : [docs](https://docs.docker.com/engine/reference/commandline/build/)
 
 **desc** : *Dockerfile are use to create images of an application*
 
@@ -318,7 +318,7 @@ ENTRYPOINT
 
 <a name="build_image">
 
-## Build Images
+### Build Images
 
 Usage : `docker build [OPTIONS] PATH | URL | -`
 
@@ -339,14 +339,14 @@ docker push drazic/my-app
 
 <a name="share_image">
 
-## Share Image
+### Share Image
 
 ```bash
 docker save <IMAGE_NAME> -o <FILE_NAME.tar>
 docker load -i <FILE_NAME.tar>
 ```
 
-## Repository Private/Public
+### Repository Private/Public
 
 Workflow
 ```bash
