@@ -8,6 +8,8 @@
 - [Docker Run](#dr)
 - [Docker Image](#di)
   - [Dockerfile](#df)
+  - [Build Image](#build_image)
+  - [Share image](#share_image)
 - [Networks](network.md)
 
 ---
@@ -314,7 +316,9 @@ ENTRYPOINT
 - `ENTRYPOINT` : will not be override by by the input `COMMAND`
 - `CMD` : will be override by the input `COMMAND` in `docker run <IMAGE_NAME> <COMMAND>`
 
-### Build Images
+<a name="build_image">
+
+## Build Images
 
 Usage : `docker build [OPTIONS] PATH | URL | -`
 
@@ -331,6 +335,15 @@ docker build -f Dockerfile -t drazic/my-app .
 docker push <DOCKER_NAME>
 # example
 docker push drazic/my-app
+```
+
+<a name="share_image">
+
+## Share Image
+
+```bash
+docker save <IMAGE_NAME> -o <FILE_NAME.tar>
+docker load -i <FILE_NAME.tar>
 ```
 
 ## Repository Private/Public
