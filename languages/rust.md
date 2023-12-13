@@ -50,6 +50,14 @@ let s: String = "Hello world".to_string();
 
 #### Focus on &str
 
+```
+let bstr : &str = "hellow.world";
+
+bstr.split("."); -> iterator
+
+bstr.contains("."); -> bool
+```
+
 #### Focus on String
 ```rust
 let mut string : String = String::new();
@@ -62,5 +70,7 @@ string.is_empty();
 string.split_at(line.find(':').unwrap());
 
 string.parse::<i32>().unwrap()
+
+string.contains("."); -> bool
 ```
 
