@@ -31,3 +31,15 @@ Install with
 # -e for editable source
 pip install [-e] .
 ```
+
+## PIP (Python Idex Packages)
+
+```bash
+pip install <PACKAGE_NAME>
+pip uninstall <PACKAGE_NAME>
+
+pip cache info
+pip cache list
+pip cache dir
+pip cache purge
+```
