@@ -29,7 +29,7 @@
 </style>
 ```
 
-Show varibale value in HTML like so : 
+Show variable value in HTML like so : 
 ```svelte 
 <h1> {variable} <h1>
 ```
