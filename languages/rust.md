@@ -50,7 +50,7 @@ let s: String = "Hello world".to_string();
 
 #### Focus on &str
 
-```
+```rust
 let bstr : &str = "hellow.world";
 
 bstr.split("."); -> iterator
