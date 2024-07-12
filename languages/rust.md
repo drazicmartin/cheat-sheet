@@ -76,5 +76,9 @@ string.contains("."); -> bool
 for char in string.chars() {
     println!("{}", char);
 }
+
+for (index, char) in string.chars().enumerate() {
+    println!("Character at index {}: {}", index, char);
+}
 ```
 
