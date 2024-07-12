@@ -72,5 +72,9 @@ string.split_at(line.find(':').unwrap());
 string.parse::<i32>().unwrap()
 
 string.contains("."); -> bool
+
+for char in string.chars() {
+    println!("{}", char);
+}
 ```
 
