@@ -80,5 +80,8 @@ for char in string.chars() {
 for (index, char) in string.chars().enumerate() {
     println!("Character at index {}: {}", index, char);
 }
+
+let chars: Vec<char> = s.chars().collect();
+chars.get(4)
 ```
 
