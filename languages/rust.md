@@ -62,6 +62,9 @@ bstr.contains("."); -> bool
 ```rust
 let mut string : String = String::new();
 
+string.chars().count();
+# do not use len string.len() as it return the size in bytes
+
 string.push('c');
 string.push_str("characters");
 
