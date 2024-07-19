@@ -32,7 +32,7 @@ Install with
 pip install [-e] .
 ```
 
-## PIP (Python Idex Packages)
+## PIP (Python Index Packages)
 
 ```bash
 pip install <PACKAGE_NAME>
