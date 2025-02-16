@@ -5,6 +5,7 @@ It is accessible in GithubPage [Here](https://drazicmartin.github.io/cheat-sheet
 
 ## Quick links
  - [Python](python/snippet.md)
+ - [Artificial Intelligence](AI/README.md)
  - Container
    - [Docker](container/docker/README.md)
    - [Kubernetes](container/kubernetes.md)
