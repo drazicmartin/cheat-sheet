@@ -41,6 +41,9 @@ The Q comes from “the Quality” (the value) of that action at that state.<br>
 Q-Learning is the algorithm we use to train our Q-function<br>
 Internally, our Q-function is encoded by a Q-table, a table where each cell corresponds to a state-action pair value. Think of this Q-table as the memory or cheat sheet of our Q-function.<br>
 
+### The policy
+### $\pi^*(s) = argmax_a(Q^*(s,a))$
+
 #### Off-policy vs On-policy
 Off-policy: using a different policy for acting (inference) and updating (training).<br>
 On-policy: using the same policy for acting and updating.
