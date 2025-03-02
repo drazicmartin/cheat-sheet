@@ -35,6 +35,7 @@ Policy, noted π is defined as `π(S) = A`, Given a state the policy tell us wha
     - $V(S_t) \gets V(S_t) + \alpha * [R_{t+1} + \gamma V(S_{t+1}) - V(S_t)]$
 
 ## Q-learning
+The Q comes from “the Quality” of that action at that state.
 
 Q-Learning is an **off-policy** **value-based** method that uses a **TD approach** to train its **action-value function**<br>
 The Q comes from “the Quality” (the value) of that action at that state.<br>
@@ -47,6 +48,30 @@ Internally, our Q-function is encoded by a Q-table, a table where each cell corr
 #### Off-policy vs On-policy
 Off-policy: using a different policy for acting (inference) and updating (training).<br>
 On-policy: using the same policy for acting and updating.
+
+## Deep Q-learning
+
+Deep Q-Learning: Method that trains a neural network to approximate, given a state, the different Q-values for each possible action at that state. It is used to solve problems when observational space is too big to apply a tabular Q-Learning approach.
+
+### Temporal Limitation 
+Temporal Limitation is a difficulty presented when the environment state is represented by frames. A frame by itself does not provide temporal information. In order to obtain temporal information, we need to stack a number of frames together.
+
+### Phases of Deep Q-Learning:
+
+- Sampling: Actions are performed, and observed experience tuples are stored in a replay memory.
+- Training: Batches of tuples are selected randomly and the neural network updates its weights using gradient descent.
+
+### Solutions to stabilize Deep Q-Learning:
+
+- **Experience Replay**: A replay memory is created to save experiences samples that can be reused during training. This allows the agent to learn from the same experiences multiple times. Also, it helps the agent avoid forgetting previous experiences as it gets new ones.
+
+- **Random sampling** from replay buffer allows to remove correlation in the observation sequences and prevents action values from oscillating or diverging catastrophically.
+
+- **Fixed Q-Target**: In order to calculate the Q-Target we need to estimate the discounted optimal Q-value of the next state by using Bellman equation. The problem is that the same network weights are used to calculate the Q-Target and the Q-value. This means that everytime we are modifying the Q-value, the Q-Target also moves with it. To avoid this issue, a separate network with fixed parameters is used for estimating the Temporal Difference Target. The target network is updated by copying parameters from our Deep Q-Network after certain C steps.
+
+- **Double DQN**: Method to handle overestimation of Q-Values. This solution uses two networks to decouple the action selection from the target Value generation:
+    - DQN Network to select the best action to take for the next state (the action with the highest Q-Value)
+    - Target Network to calculate the target Q-Value of taking that action at the next state. This approach reduces the Q-Values overestimation, it helps to train faster and have more stable learning.
 
 # Sources
 - https://huggingface.co/learn/deep-rl-course
